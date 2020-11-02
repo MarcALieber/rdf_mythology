@@ -1,0 +1,887 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologie#> .
+@prefix m: <http://www.w3.org/mythologie/class#> .
+@prefix p: <http://www.w3.org/mythologie/property#> .
+@prefix gim: <http://www.w3.org/mythologie/greek/immortal#> .
+@prefix gmo: <http://www.w3.org/mythologie/greek/mortal#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rim: <http://www.w3.org/mythologie/roman/immortal#> .
+@prefix rom: <http://www.w3.org/mythologie/roman/immortal#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@base <http://www.semanticweb.org/ontologies/mythologie> .
+
+<http://www.semanticweb.org/ontologies/mythologie> rdf:type owl:Ontology ;
+                                                    owl:imports <file:/home/marc/workspace/Mythologie/datamodel/mythologyData.ttl> ,
+                                                                <http://www.w3.org/2004/02/skos/core> ;
+                                                    rdfs:comment "Mythologie grecque et romaine"@fr .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/mythologie/property#becomes
+p:becomes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf p:event .
+
+
+###  http://www.w3.org/mythologie/property#event
+p:event rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#hasChild
+p:hasChild rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf p:isRelatedTo ;
+           owl:inverseOf p:isChildOf .
+
+
+###  http://www.w3.org/mythologie/property#hasFather
+p:hasFather rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:hasParent .
+
+
+###  http://www.w3.org/mythologie/property#hasGender
+p:hasGender rdf:type owl:ObjectProperty ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range :Gender .
+
+
+###  http://www.w3.org/mythologie/property#hasLover
+p:hasLover rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.w3.org/mythologie/property#hasMother
+p:hasMother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:hasParent .
+
+
+###  http://www.w3.org/mythologie/property#hasParent
+p:hasParent rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.w3.org/mythologie/property#hasSourceIdentifier
+p:hasSourceIdentifier rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isA
+p:isA rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isAlsoCalled
+p:isAlsoCalled rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isBrotherOf
+p:isBrotherOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isSibling .
+
+
+###  http://www.w3.org/mythologie/property#isChildOf
+p:isChildOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.w3.org/mythologie/property#isDaughterOf
+p:isDaughterOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf p:isChildOf .
+
+
+###  http://www.w3.org/mythologie/property#isFatherOf
+p:isFatherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:hasChild .
+
+
+###  http://www.w3.org/mythologie/property#isGodOf
+p:isGodOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isGodessOf
+p:isGodessOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isHusbandOf
+p:isHusbandOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isMarriedTo .
+
+
+###  http://www.w3.org/mythologie/property#isKingOf
+p:isKingOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isMarriedTo
+p:isMarriedTo rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.w3.org/mythologie/property#isMotherOf
+p:isMotherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:hasChild .
+
+
+###  http://www.w3.org/mythologie/property#isRelatedTo
+p:isRelatedTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#isSibling
+p:isSibling rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.w3.org/mythologie/property#isSisterOf
+p:isSisterOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:isSibling .
+
+
+###  http://www.w3.org/mythologie/property#isSonOf
+p:isSonOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf p:isChildOf .
+
+
+###  http://www.w3.org/mythologie/property#isTwinBrotherOf
+p:isTwinBrotherOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf p:isBrotherOf .
+
+
+###  http://www.w3.org/mythologie/property#isTwinSisterOf
+p:isTwinSisterOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf p:isSisterOf .
+
+
+###  http://www.w3.org/mythologie/property#isWifeOf
+p:isWifeOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf p:isMarriedTo .
+
+
+###  http://www.w3.org/mythologie/property#livesIn
+p:livesIn rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/mythologie/property#transformedInto
+p:transformedInto rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf p:event .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/mythologie/property#hasDBPediaSource
+p:hasDBPediaSource rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.w3.org/mythologie/property#hasOtherSource
+p:hasOtherSource rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.w3.org/mythologie/property#hasSource
+p:hasSource rdf:type owl:DatatypeProperty ;
+            rdfs:domain skos:Concept ;
+            rdfs:range xsd:anyURI .
+
+
+###  http://www.w3.org/mythologie/property#hasTheoiSource
+p:hasTheoiSource rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.w3.org/mythologie/property#hasWikidataSource
+p:hasWikidataSource rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf p:hasSource .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ontologies/mythologie#AgriculturalDeities
+:AgriculturalDeities rdf:type owl:Class ;
+                     rdfs:subClassOf :Immortels ;
+                     skos:prefLabel "Deité agricole"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Amazons
+:Amazons rdf:type owl:Class ;
+         rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#BirthPlace
+:BirthPlace rdf:type owl:Class ;
+            rdfs:subClassOf :region .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#ChtonicDeities
+:ChtonicDeities rdf:type owl:Class ;
+                rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#DeifiedMortals
+:DeifiedMortals rdf:type owl:Class ;
+                rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#EgyptianMythCharacter
+:EgyptianMythCharacter rdf:type owl:Class ;
+                       rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Gigantes
+:Gigantes rdf:type owl:Class ;
+          rdfs:subClassOf :GigantesAndOtherGiants .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#GigantesAndOtherGiants
+:GigantesAndOtherGiants rdf:type owl:Class ;
+                        rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#GreekMythCharacter
+:GreekMythCharacter rdf:type owl:Class ;
+                    rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#HealthDeities
+:HealthDeities rdf:type owl:Class ;
+               rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Heroes
+:Heroes rdf:type owl:Class ;
+        rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Home
+:Home rdf:type owl:Class ;
+      rdfs:subClassOf :region .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#HumanNonhumanBeing
+:HumanNonhumanBeing rdf:type owl:Class ;
+                    rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Immortels
+:Immortels rdf:type owl:Class ;
+           rdfs:subClassOf :HumanNonhumanBeing ;
+           skos:prefLabel "Immortals"@en ,
+                          "Immortels"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#InmatesOfTartares
+:InmatesOfTartares rdf:type owl:Class ;
+                   rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Kings
+:Kings rdf:type owl:Class ;
+       rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#MinorFigures
+:MinorFigures rdf:type owl:Class ;
+              rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Mortals
+:Mortals rdf:type owl:Class ;
+         rdfs:subClassOf :HumanNonhumanBeing .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#NordicMythCharacter
+:NordicMythCharacter rdf:type owl:Class ;
+                     rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#NotableWoman
+:NotableWoman rdf:type owl:Class ;
+              rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#OlympianGod
+:OlympianGod rdf:type owl:Class ;
+             rdfs:subClassOf :Olympians .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#OlympianGoddess
+:OlympianGoddess rdf:type owl:Class ;
+                 rdfs:subClassOf :Olympians .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Olympians
+:Olympians rdf:type owl:Class ;
+           rdfs:subClassOf :Immortels ;
+           skos:prefLabel "Dieux de l'Olympe"@fr ,
+                          "Olympians"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#OtherDeities
+:OtherDeities rdf:type owl:Class ;
+              rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#OtherGiants
+:OtherGiants rdf:type owl:Class ;
+             rdfs:subClassOf :GigantesAndOtherGiants .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#OtherTitans
+:OtherTitans rdf:type owl:Class ;
+             rdfs:subClassOf :Titans .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#PersonifiedConcepts
+:PersonifiedConcepts rdf:type owl:Class ;
+                     rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#PrimordialDeities
+:PrimordialDeities rdf:type owl:Class ;
+                   rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#RomanMythCharacter
+:RomanMythCharacter rdf:type owl:Class ;
+                    rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#RusticDeities
+:RusticDeities rdf:type owl:Class ;
+               rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#SeaDeities
+:SeaDeities rdf:type owl:Class ;
+            rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Seers
+:Seers rdf:type owl:Class ;
+       rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#SkyDeities
+:SkyDeities rdf:type owl:Class ;
+            rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#TheTwelveTitans
+:TheTwelveTitans rdf:type owl:Class ;
+                 rdfs:subClassOf :Titans .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#Titans
+:Titans rdf:type owl:Class ;
+        rdfs:subClassOf :Immortels .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#region
+:region rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dbpedia.org/page/Apollo
+<http://dbpedia.org/page/Apollo> owl:sameAs gim:Apollo .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#GreekMythCharacter
+:GreekMythCharacter rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#RomanMythCharacter
+:RomanMythCharacter rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#female
+:female rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#male
+:male rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Abderus
+gim:Abderus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Aethalides
+gim:Aethalides rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Angelia
+gim:Angelia rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Antias
+gim:Antias rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Aphrodite
+gim:Aphrodite rdf:type owl:NamedIndividual ,
+                       :OlympianGoddess ;
+              skos:exactMatch <http://www.wikidata.org/entity/Q35500> ;
+              skos:inScheme :GreekMythCharacter ;
+              p:hasGender :female ;
+              skos:prefLabel "Aphrodite"@en ,
+                             "Aphrodite"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Apollo
+gim:Apollo rdf:type owl:NamedIndividual ,
+                    :OlympianGod ;
+           skos:exactMatch rom:Apollo ,
+                           <http://www.wikidata.org/entity/Q37340> ;
+           skos:inScheme :GreekMythCharacter ;
+           p:hasGender :male ;
+           p:hasTheoiSource "https://www.theoi.com/Olympios/Apollon.html" ;
+           skos:altLabel "Phoebus"@en ,
+                         "Phoebus"@fr ;
+           skos:prefLabel "Apollo"@en ,
+                          "Apollon"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Ares
+gim:Ares rdf:type owl:NamedIndividual ,
+                  :OlympianGod ;
+         skos:exactMatch <http://www.wikidata.org/entity/Q40901> ;
+         skos:inScheme :GreekMythCharacter ;
+         p:hasGender :male ;
+         skos:prefLabel "Ares"@en ,
+                        "Arès"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Artemis
+gim:Artemis rdf:type owl:NamedIndividual ,
+                     :OlympianGoddess ;
+            skos:exactMatch <http://www.wikidata.org/entity/Q39503> ;
+            skos:inScheme :GreekMythCharacter ;
+            p:hasGender :female ;
+            skos:prefLabel "Artemis"@en ,
+                           "Artémis"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Athena
+gim:Athena rdf:type owl:NamedIndividual ,
+                    :OlympianGoddess ;
+           skos:exactMatch <http://www.wikidata.org/entity/Q37122> ;
+           skos:inScheme :GreekMythCharacter ;
+           p:hasGender :female ;
+           skos:prefLabel "Athena"@en ,
+                          "Athéna"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Autolycus
+gim:Autolycus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Bounos
+gim:Bounos rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Cephalus
+gim:Cephalus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Ceryx
+gim:Ceryx rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Cydon
+gim:Cydon rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Daphnis
+gim:Daphnis rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Demeter
+gim:Demeter rdf:type owl:NamedIndividual ,
+                     :OlympianGoddess ;
+            skos:exactMatch <http://www.wikidata.org/entity/Q40730> ;
+            skos:inScheme :GreekMythCharacter ;
+            p:hasGender :female ;
+            skos:prefLabel "Demeter"@en ,
+                           "Déméter"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Dolops
+gim:Dolops rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Dyonisus
+gim:Dyonisus rdf:type owl:NamedIndividual ,
+                      :OlympianGod ;
+             skos:inScheme :GreekMythCharacter ;
+             p:hasGender :male ;
+             skos:prefLabel "Dyonisos"@fr ,
+                            "Dyonisus"@en .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Echion
+gim:Echion rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Eleusis
+gim:Eleusis rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Eudoros
+gim:Eudoros rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Eurestus
+gim:Eurestus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Eurymachus
+gim:Eurymachus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Eurytus
+gim:Eurytus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Hephaestus
+gim:Hephaestus rdf:type owl:NamedIndividual ,
+                        :OlympianGod ;
+               skos:exactMatch <http://www.wikidata.org/entity/Q44384> ;
+               skos:inScheme :GreekMythCharacter ;
+               p:hasGender :male ;
+               skos:altLabel "Hephaistos"@en ;
+               skos:prefLabel "Hephaestus"@en ,
+                              "Héphaistos"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Hera
+gim:Hera rdf:type owl:NamedIndividual ,
+                  :OlympianGoddess ;
+         skos:exactMatch <http://www.wikidata.org/entity/Q38012> ;
+         skos:inScheme :GreekMythCharacter ;
+         p:hasGender :female ;
+         skos:prefLabel "Hera"@en ,
+                        "Héra"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Hermaphroditus
+gim:Hermaphroditus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Hermes
+gim:Hermes rdf:type owl:NamedIndividual ,
+                    :OlympianGod ;
+           skos:exactMatch <http://www.wikidata.org/entity/Q41484> ;
+           skos:inScheme :RomanMythCharacter ;
+           p:hasChild gim:Abderus ,
+                      gim:Aethalides ,
+                      gim:Angelia ,
+                      gim:Antias ,
+                      gim:Autolycus ,
+                      gim:Bounos ,
+                      gim:Cephalus ,
+                      gim:Ceryx ,
+                      gim:Cydon ,
+                      gim:Daphnis ,
+                      gim:Dolops ,
+                      gim:Echion ,
+                      gim:Eleusis ,
+                      gim:Eudoros ,
+                      gim:Eurestus ,
+                      gim:Eurymachus ,
+                      gim:Eurytus ,
+                      gim:Hermaphroditus ,
+                      gim:Myrtilus ,
+                      gim:Norax ,
+                      gim:Pan ,
+                      gim:Pharis ,
+                      gim:PolybusOfSicyon ,
+                      gim:Priapus ,
+                      gim:Prylis ,
+                      gim:Silenus ,
+                      gim:Tyche ;
+           p:hasGender :male ;
+           skos:prefLabel "Hermes"@en ,
+                          "Hermès"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Hestia
+gim:Hestia rdf:type owl:NamedIndividual ;
+           skos:exactMatch <http://www.wikidata.org/entity/Q41419> .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Myrtilus
+gim:Myrtilus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Norax
+gim:Norax rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Pan
+gim:Pan rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Pharis
+gim:Pharis rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#PolybusOfSicyon
+gim:PolybusOfSicyon rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Poseidon
+gim:Poseidon rdf:type owl:NamedIndividual ,
+                      :OlympianGod ;
+             skos:exactMatch <http://www.wikidata.org/entity/Q41127> ;
+             skos:inScheme :GreekMythCharacter ;
+             p:hasGender :male ;
+             skos:prefLabel "Poseidon"@en ,
+                            "Poseïdon"@fr .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Priapus
+gim:Priapus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Prylis
+gim:Prylis rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Silenus
+gim:Silenus rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Tyche
+gim:Tyche rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/greek/immortal#Zeus
+gim:Zeus rdf:type owl:NamedIndividual ,
+                  :OlympianGod ;
+         skos:exactMatch <http://www.wikidata.org/entity/Q34201> ;
+         skos:inScheme :GreekMythCharacter ;
+         p:hasGender :male ;
+         p:isMarriedTo rom:Hera ;
+         skos:definition "ZEUS is the King of the Gods and the god of the sky, weather, law and order, destiny and fate, and kingship"@en ;
+         skos:prefLabel "Zeus"@en ,
+                        "Zeus"@fr .
+
+
+###  http://www.w3.org/mythologie/roman/immortal#Apollo
+rom:Apollo rdf:type owl:NamedIndividual ,
+                    :OlympianGod ;
+           skos:inScheme :RomanMythCharacter ;
+           p:hasGender :male ;
+           skos:prefLabel "Apollo"@en ,
+                          "Apollon"@fr .
+
+
+###  http://www.w3.org/mythologie/roman/immortal#Hera
+rom:Hera rdf:type owl:NamedIndividual .
+
+
+###  http://www.w3.org/mythologie/roman/immortal#Jupiter
+rom:Jupiter rdf:type owl:NamedIndividual ,
+                     :OlympianGod ;
+            skos:inScheme :RomanMythCharacter ;
+            p:hasGender :male ;
+            skos:prefLabel "Jupiter"@en ,
+                           "Jupiter"@fr .
+
+
+###  http://www.wikidata.org/entity/Q1246244
+<http://www.wikidata.org/entity/Q1246244> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Pharis .
+
+
+###  http://www.wikidata.org/entity/Q132582
+<http://www.wikidata.org/entity/Q132582> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Pan .
+
+
+###  http://www.wikidata.org/entity/Q1328260
+<http://www.wikidata.org/entity/Q1328260> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Eleusis .
+
+
+###  http://www.wikidata.org/entity/Q1331224
+<http://www.wikidata.org/entity/Q1331224> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Eudoros .
+
+
+###  http://www.wikidata.org/entity/Q1378487
+<http://www.wikidata.org/entity/Q1378487> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Eurymachus .
+
+
+###  http://www.wikidata.org/entity/Q204146
+<http://www.wikidata.org/entity/Q204146> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Hermaphroditus .
+
+
+###  http://www.wikidata.org/entity/Q206878
+<http://www.wikidata.org/entity/Q206878> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Priapus .
+
+
+###  http://www.wikidata.org/entity/Q213440
+<http://www.wikidata.org/entity/Q213440> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Tyche .
+
+
+###  http://www.wikidata.org/entity/Q21548732
+<http://www.wikidata.org/entity/Q21548732> rdf:type owl:NamedIndividual ;
+                                           skos:exactMatch gim:Antias .
+
+
+###  http://www.wikidata.org/entity/Q2661436
+<http://www.wikidata.org/entity/Q2661436> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Norax .
+
+
+###  http://www.wikidata.org/entity/Q3010239
+<http://www.wikidata.org/entity/Q3010239> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Cephalus .
+
+
+###  http://www.wikidata.org/entity/Q308055
+<http://www.wikidata.org/entity/Q308055> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Abderus .
+
+
+###  http://www.wikidata.org/entity/Q34201
+<http://www.wikidata.org/entity/Q34201> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3545323
+<http://www.wikidata.org/entity/Q3545323> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:PolybusOfSicyon .
+
+
+###  http://www.wikidata.org/entity/Q35500
+<http://www.wikidata.org/entity/Q35500> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3676567
+<http://www.wikidata.org/entity/Q3676567> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Cydon .
+
+
+###  http://www.wikidata.org/entity/Q37122
+<http://www.wikidata.org/entity/Q37122> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3731822
+<http://www.wikidata.org/entity/Q3731822> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Eurytus .
+
+
+###  http://www.wikidata.org/entity/Q37340
+<http://www.wikidata.org/entity/Q37340> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q38012
+<http://www.wikidata.org/entity/Q38012> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q39503
+<http://www.wikidata.org/entity/Q39503> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q40730
+<http://www.wikidata.org/entity/Q40730> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q4089734
+<http://www.wikidata.org/entity/Q4089734> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Echion .
+
+
+###  http://www.wikidata.org/entity/Q40901
+<http://www.wikidata.org/entity/Q40901> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q410417
+<http://www.wikidata.org/entity/Q410417> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Aethalides .
+
+
+###  http://www.wikidata.org/entity/Q41127
+<http://www.wikidata.org/entity/Q41127> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q41419
+<http://www.wikidata.org/entity/Q41419> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q41484
+<http://www.wikidata.org/entity/Q41484> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q44384
+<http://www.wikidata.org/entity/Q44384> rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q463107
+<http://www.wikidata.org/entity/Q463107> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Autolycus .
+
+
+###  http://www.wikidata.org/entity/Q464091
+<http://www.wikidata.org/entity/Q464091> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Silenus .
+
+
+###  http://www.wikidata.org/entity/Q4762641
+<http://www.wikidata.org/entity/Q4762641> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Angelia .
+
+
+###  http://www.wikidata.org/entity/Q5488708
+<http://www.wikidata.org/entity/Q5488708> rdf:type owl:NamedIndividual ;
+                                          skos:exactMatch gim:Prylis .
+
+
+###  http://www.wikidata.org/entity/Q60181962
+<http://www.wikidata.org/entity/Q60181962> rdf:type owl:NamedIndividual ;
+                                           skos:exactMatch gim:Dolops .
+
+
+###  http://www.wikidata.org/entity/Q61014715
+<http://www.wikidata.org/entity/Q61014715> rdf:type owl:NamedIndividual ;
+                                           skos:exactMatch gim:Eurestus .
+
+
+###  http://www.wikidata.org/entity/Q615912
+<http://www.wikidata.org/entity/Q615912> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Myrtilus .
+
+
+###  http://www.wikidata.org/entity/Q741627
+<http://www.wikidata.org/entity/Q741627> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Daphnis .
+
+
+###  http://www.wikidata.org/entity/Q838393
+<http://www.wikidata.org/entity/Q838393> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Bounos .
+
+
+###  http://www.wikidata.org/entity/Q977434
+<http://www.wikidata.org/entity/Q977434> rdf:type owl:NamedIndividual ;
+                                         skos:exactMatch gim:Ceryx .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
