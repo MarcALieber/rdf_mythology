@@ -12,23 +12,26 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 
-gim:Zeus rdf:type owl:NamedIndividual , :OlympianGod ;
+
+gim:Zeus rdf:type owl:NamedIndividual , :OlympianGod, :Olympians ,skos:concept;
+  skos:topConceptOf :GreekMythCharacter;
   skos:prefLabel "Zeus"@en ;
   skos:prefLabel "Zeus"@fr ;
   p:hasRomanCounterpart rim:Jupiter ;
-  p:isBrotherOf gim:Poseidon , gim:Apollo , gim:Ares ,gim:Hephaestus ,gim:Aphrodite ,rim:Hera;
+  p:isBrotherOf gim:Poseidon , gim:Apollo , gim:Ares ,gim:Hephaestus ,gim:Aphrodite ,gim:Hera;
   p:hasGender :male ;
-  p:isMarriedTo rim:Hera ;
+  p:isMarriedTo gim:Hera ;
   skos:definition "ZEUS is the King of the Gods and the god of the sky, weather, law and order, destiny and fate, and kingship"@en ;
   skos:inScheme :GreekMythCharacter .
 
-rim:Jupiter rdf:type owl:NamedIndividual , :OlympianGod ;
+rim:Jupiter rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
+  skos:topConceptOf :RomanMythCharacter;
   skos:prefLabel "Jupiter"@en ;
   skos:prefLabel "Jupiter"@fr ;
   p:hasGender :male ;
   skos:inScheme :RomanMythCharacter  .
 
-gim:Apollo rdf:type owl:NamedIndividual , :OlympianGod ;
+gim:Apollo rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
   skos:prefLabel "Apollo"@en ;
   skos:prefLabel "Apollon"@fr ;
   skos:altLabel "Phoebus"@fr ;
@@ -36,49 +39,46 @@ gim:Apollo rdf:type owl:NamedIndividual , :OlympianGod ;
   p:hasGender :male ;
   skos:exactMatch rim:Apollo;
   skos:inScheme :GreekMythCharacter;  
+  skos:note "";
   p:hasTheoiSource "https://www.theoi.com/Olympios/Apollon.html";
   owl:sameAs <http://dbpedia.org/page/Apollo>
   .
 
-rim:Apollo rdf:type owl:NamedIndividual , :OlympianGod ;
+rim:Apollo rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
   skos:prefLabel "Apollo"@en ;
   skos:prefLabel "Apollon"@fr ;
   p:hasGender :male ;
   skos:inScheme :RomanMythCharacter  .
 
-gim:Ares rdf:type owl:NamedIndividual , :OlympianGod ;
+gim:Ares rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
   skos:prefLabel "Ares"@en ;
   skos:prefLabel "Arès"@fr;
   p:hasGender :male ;
   skos:inScheme :GreekMythCharacter  .
 
 ###  http://www.w3.org/mythologie/immortal#Poseidon
-gim:Poseidon rdf:type owl:NamedIndividual ,
-                   :OlympianGod ;
+gim:Poseidon rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
           skos:prefLabel "Poseidon"@en ,
                          "Poseïdon"@fr ;
   p:hasGender :male ;
   skos:inScheme :GreekMythCharacter  .
                          
 ###  http://www.w3.org/mythologie/immortal#Hermes
-gim:Hermes rdf:type owl:NamedIndividual ,
-                   :OlympianGod ;
+gim:Hermes rdf:type owl:NamedIndividual , :OlympianGod ,skos:concept;
           skos:prefLabel "Hermes"@en ,
                          "Hermès"@fr ;
   p:hasGender :male ;
   skos:inScheme :RomanMythCharacter  .
                          
 ###  http://www.w3.org/mythologie/immortal#Dyonisus
-gim:Dyonisus rdf:type owl:NamedIndividual ,
-                   :OlympianGod ;
+gim:Dyonisus rdf:type owl:NamedIndividual ,:OlympianGod ,skos:concept;
           skos:prefLabel "Dyonisus"@en ,
                          "Dyonisos"@fr ;
   p:hasGender :male ;
   skos:inScheme :GreekMythCharacter  .
 
 ###  http://www.w3.org/mythologie/immortal#Hephaestus
-gim:Hephaestus rdf:type owl:NamedIndividual ,
-                   :OlympianGod ;
+gim:Hephaestus rdf:type owl:NamedIndividual ,:OlympianGod ,skos:concept;
           skos:prefLabel "Hephaestus"@en ,
                          "Héphaistos"@fr ;
           skos:altLabel "Hephaistos"@en ;
@@ -88,8 +88,7 @@ gim:Hephaestus rdf:type owl:NamedIndividual ,
                          
                                                   
 ###  http://www.w3.org/mythologie/immortal#Aphrodite
-gim:Aphrodite rdf:type owl:NamedIndividual ,
-                   :OlympianGoddess ;
+gim:Aphrodite rdf:type owl:NamedIndividual ,:OlympianGoddess ,skos:concept;
           skos:prefLabel "Aphrodite"@en ,
                          "Aphrodite"@fr ;
   p:hasGender :female ;
@@ -97,31 +96,28 @@ gim:Aphrodite rdf:type owl:NamedIndividual ,
                          
                          
 ###  http://www.w3.org/mythologie/immortal#Hera
-gim:Hera rdf:type owl:NamedIndividual ,
-                   :OlympianGoddess ;
+gim:Hera rdf:type owl:NamedIndividual ,:OlympianGoddess ,skos:concept;
           skos:prefLabel "Hera"@en ,
                          "Héra"@fr ;
   p:hasGender :female ;
   skos:inScheme :GreekMythCharacter  .
                          
 ###  http://www.w3.org/mythologie/immortal#Artemis
-gim:Artemis rdf:type owl:NamedIndividual ,
-                   :OlympianGoddess ;
+gim:Artemis rdf:type owl:NamedIndividual ,:OlympianGoddess ,skos:concept;
           skos:prefLabel "Artemis"@en ,
                          "Artémis"@fr ;
   p:hasGender :female ;
   skos:inScheme :GreekMythCharacter  .
                          
 ###  http://www.w3.org/mythologie/immortal#Athena
-gim:Athena rdf:type owl:NamedIndividual ,
-                   :OlympianGoddess ;
+gim:Athena rdf:type owl:NamedIndividual ,:OlympianGoddess ,skos:concept;
           skos:prefLabel "Athena"@en ,
                          "Athéna"@fr ;
   p:hasGender :female ;
   skos:inScheme :GreekMythCharacter  .
                          
 ###  http://www.w3.org/mythologie/immortal#Demeter
-gim:Demeter rdf:type owl:NamedIndividual,:OlympianGoddess;
+gim:Demeter rdf:type owl:NamedIndividual,:OlympianGoddess,skos:concept;
 skos:prefLabel "Demeter"@en,"Déméter"@fr ;
   p:hasGender :female ;
   skos:inScheme :GreekMythCharacter  .
@@ -140,58 +136,60 @@ gim:Hermes skos:exactMatch wd:Q41484 .
 gim:Hephaestus skos:exactMatch wd:Q44384 .
 
 gim:Hermes p:hasChild gim:Pan  .
-<http://www.wikidata.org/entity/Q132582> skos:exactMatch gim:Pan .
+wd:Q132582 skos:exactMatch gim:Pan .
+
 gim:Hermes p:hasChild gim:Hermaphroditus .
-<http://www.wikidata.org/entity/Q204146> skos:exactMatch gim:Hermaphroditus .
+wd:Q204146 skos:exactMatch gim:Hermaphroditus .
+
 gim:Hermes p:hasChild gim:Priapus .
-<http://www.wikidata.org/entity/Q206878> skos:exactMatch gim:Priapus .
+wd:Q206878 skos:exactMatch gim:Priapus .
 gim:Hermes p:hasChild gim:Tyche  .
-<http://www.wikidata.org/entity/Q213440> skos:exactMatch gim:Tyche .
+wd:Q213440 skos:exactMatch gim:Tyche .
 gim:Hermes p:hasChild gim:Abderus .
-<http://www.wikidata.org/entity/Q308055> skos:exactMatch gim:Abderus .
+wd:Q308055 skos:exactMatch gim:Abderus .
 gim:Hermes p:hasChild gim:Aethalides .
-<http://www.wikidata.org/entity/Q410417> skos:exactMatch gim:Aethalides .
+wd:Q410417 skos:exactMatch gim:Aethalides .
 gim:Hermes p:hasChild gim:Autolycus .
-<http://www.wikidata.org/entity/Q463107> skos:exactMatch gim:Autolycus .
+wd:Q463107 skos:exactMatch gim:Autolycus .
 gim:Hermes p:hasChild gim:Silenus .
-<http://www.wikidata.org/entity/Q464091> skos:exactMatch gim:Silenus .
+wd:Q464091 skos:exactMatch gim:Silenus .
 gim:Hermes p:hasChild gim:Myrtilus .
-<http://www.wikidata.org/entity/Q615912> skos:exactMatch gim:Myrtilus .
+wd:Q615912 skos:exactMatch gim:Myrtilus .
 gim:Hermes p:hasChild gim:Daphnis .
-<http://www.wikidata.org/entity/Q741627> skos:exactMatch gim:Daphnis .
+wd:Q741627 skos:exactMatch gim:Daphnis .
 gim:Hermes p:hasChild gim:Bounos .
-<http://www.wikidata.org/entity/Q838393> skos:exactMatch gim:Bounos .
+wd:Q838393 skos:exactMatch gim:Bounos .
 gim:Hermes p:hasChild gim:Ceryx .
-<http://www.wikidata.org/entity/Q977434> skos:exactMatch gim:Ceryx .
+wd:Q977434 skos:exactMatch gim:Ceryx .
 gim:Hermes p:hasChild gim:Pharis .
-<http://www.wikidata.org/entity/Q1246244> skos:exactMatch gim:Pharis .
+wd:Q1246244 skos:exactMatch gim:Pharis .
 gim:Hermes p:hasChild gim:Eleusis .
-<http://www.wikidata.org/entity/Q1328260> skos:exactMatch gim:Eleusis .
+wd:Q1328260 skos:exactMatch gim:Eleusis .
 gim:Hermes p:hasChild gim:Eudoros .
-<http://www.wikidata.org/entity/Q1331224> skos:exactMatch gim:Eudoros .
+wd:Q1331224 skos:exactMatch gim:Eudoros .
 gim:Hermes p:hasChild gim:Eurymachus .
-<http://www.wikidata.org/entity/Q1378487> skos:exactMatch gim:Eurymachus .
+wd:Q1378487 skos:exactMatch gim:Eurymachus .
 gim:Hermes p:hasChild gim:Norax .
-<http://www.wikidata.org/entity/Q2661436> skos:exactMatch gim:Norax .
+wd:Q2661436 skos:exactMatch gim:Norax .
 gim:Hermes p:hasChild gim:Cephalus .
-<http://www.wikidata.org/entity/Q3010239> skos:exactMatch gim:Cephalus .
+wd:Q3010239 skos:exactMatch gim:Cephalus .
 gim:Hermes p:hasChild gim:PolybusOfSicyon .
-<http://www.wikidata.org/entity/Q3545323> skos:exactMatch gim:PolybusOfSicyon .
+wd:Q3545323 skos:exactMatch gim:PolybusOfSicyon .
 gim:Hermes p:hasChild gim:Cydon .
-<http://www.wikidata.org/entity/Q3676567> skos:exactMatch gim:Cydon .
+wd:Q3676567 skos:exactMatch gim:Cydon .
 gim:Hermes p:hasChild gim:Eurytus .
-<http://www.wikidata.org/entity/Q3731822> skos:exactMatch gim:Eurytus .
+wd:Q3731822 skos:exactMatch gim:Eurytus .
 gim:Hermes p:hasChild gim:Echion .
-<http://www.wikidata.org/entity/Q4089734> skos:exactMatch gim:Echion .
+wd:Q4089734 skos:exactMatch gim:Echion .
 gim:Hermes p:hasChild gim:Angelia .
-<http://www.wikidata.org/entity/Q4762641> skos:exactMatch gim:Angelia .
+wd:Q4762641 skos:exactMatch gim:Angelia .
 gim:Hermes p:hasChild gim:Prylis .
-<http://www.wikidata.org/entity/Q5488708> skos:exactMatch gim:Prylis .
+wd:Q5488708 skos:exactMatch gim:Prylis .
 gim:Hermes p:hasChild gim:Antias .
-<http://www.wikidata.org/entity/Q21548732> skos:exactMatch gim:Antias .
+wd:Q21548732 skos:exactMatch gim:Antias .
 gim:Hermes p:hasChild gim:Dolops .
-<http://www.wikidata.org/entity/Q60181962> skos:exactMatch gim:Dolops .
+wd:Q60181962 skos:exactMatch gim:Dolops .
 gim:Hermes p:hasChild gim:Eurestus .
-<http://www.wikidata.org/entity/Q61014715> skos:exactMatch gim:Eurestus .
+wd:Q61014715 skos:exactMatch gim:Eurestus .
 
                                                                                                                              

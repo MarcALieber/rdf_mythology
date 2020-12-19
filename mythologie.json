@@ -1,0 +1,172 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "auth": "http://www.semanticweb.org/ontologies/mythologie/author/",
+	    "t": "http://www.semanticweb.org/ontologies/mythologie/temple/",
+	    "mytha": "http://www.semanticweb.org/ontologies/mythologie/animal/",
+	    "mythp": "http://www.semanticweb.org/ontologies/mythologie/plant/",
+	    "r": "http://www.semanticweb.org/ontologies/mythologie/region/",
+	    "city": "http://www.semanticweb.org/ontologies/mythologie/city/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "gim":"http://www.w3.org/mythologie/greek/immortal/",
+	    "gmo": "http://www.w3.org/mythologie/greek/mortal/",
+	    "rim": "http://www.w3.org/mythologie/roman/immortal/",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {
+			"@type": "@id"
+		},
+		"skos:inScheme": {
+			"@type": "@id"
+		},
+		"skos:related": {
+			"@type": "@id"
+		},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"father": {"@type": "@id"},
+		"mother": {"@type": "@id"},
+		"spouses": {"@type": "@id"},
+		"lovers": {"@type": "@id"},
+		"children": {"@type": "@id"},
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {
+			"@type": "@id"
+		},
+		"skos:topConceptOf": {
+			"@type": "@id"
+		},
+		"p:hasRomanCounterpart":{ "@type": "@id" },
+		"p:isBrotherOf":{ "@type": "@id" },
+		"p:hasGender":{ "@type": "@id" },
+		"p:isMarriedTo":{ "@type": "@id" },
+		"p:sacredPlant":{ "@type": "@id" },
+		"p:sacredAnimal":{ "@type": "@id" },
+		"p:mentionedBy":{ "@type": "@id" },
+		"p:hasTemple":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "gim:Zeus",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel": 
+	    {"en": "Zeus",
+	     "fr": "Zeus"
+		},
+	"p:hasRomanCounterpart":"rim:Jupiter",
+	"skos:topConceptOf":"myth:GreekMythCharacter",
+	"p:isBrotherOf":["gim:Poseidon","gim:Ares","gim:Hephaestus","gim:Hera"],
+	"p:hasGender":"myth:male",
+	"p:isMarriedTo":"gim:Hera",
+	"skos:definition":{"en":"ZEUS is the King of the Gods and the god of the sky, weather, law and order, destiny and fate, and kingship"},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Cronides","Cronion"],
+       "fr":"Cronide"
+    },
+    "p:sacredPlant":["mythp:Oak_tree","mythp:olive_tree"],
+    "p:sacredAnimal":["mytha:Eagle","mytha:bull"],
+    "p:mentionedBy":["auth:Homer","auth:Euripide"],
+    "p:hasTemple":["t:Olympe","t:Dodone"],
+    "romanName":"Jupiter",
+    "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "relatives": {
+      "father":"gim:Cronus",
+      "mother":"gim:Rhea",
+      "spouses": ["gim:Hera"],
+      "lovers": ["gim:Semele","gim:Europe"],
+      "children": ["gim:Aphrodite","gim:Dyonisos","gim:Hercule","gim:Athena","gim:Appolo","gim:Hermes"]
+    }
+    },
+    {"@id": "gim:Apollo",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Apollo",
+	     "fr": "Apollon"
+		},
+	"p:hasRomanCounterpart":"rim:Apollon",
+	"skos:topConceptOf":"myth:GreekMythCharacter",
+	"p:isBrotherOf":["gim:Artemis","gim:Ares","gim:Hephaestus","gim:Hera"],
+	"p:hasGender":"myth:male",
+	"skos:definition":{"en":"APOLLON (Apollo) was the Olympian god of prophecy and oracles, music, song and poetry, archery, healing, plague and disease, and the protection of the young. He was depicted as a handsome, beardless youth with long hair and attributes such as a wreath and branch of laurel, bow and quiver of arrows, raven, and lyre."},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Phoebus"],
+       "fr":"Phoebus"
+    },
+    "p:sacredPlant":["mythp:Laurel","mythp:larkspur","mythp:cypress"],
+    "p:sacredAnimal":["mytha:Swan","mytha:Raven"],
+    "p:godOf":["Music","prophecy","healing","archery"],
+    "p:romanName":"Apollo",
+    "p:hasHome":"Mount Olympus",
+    "p:symbol":["Lyre","Bow"],
+    "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "relatives": {
+      "father":"gim:Zeus",
+      "mother":"gim:Leto",
+      "spouses": ["gim:Hera"],
+      "lovers": ["gim:Semele","gim:Europe"],
+      "children": ["gim:Aphrodite","gim:Dyonisos","gim:Hercule","gim:Athena","gim:Appolo","gim:Hermes"]
+    }
+    },
+    {"@id": "gim:Athena",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Athena",
+	     "fr": "Athéna"
+		},
+	"p:hasRomanCounterpart":"rim:Apollon",
+	"skos:topConceptOf":"myth:GreekMythCharacter",
+	"p:isSisterOf":["gim:Artemis","gim:Ares","gim:Hephaestus","gim:Hera"],
+	"p:hasGender":"myth:female",
+	"skos:definition":{"en":"APOLLON (Apollo) was the Olympian god of prophecy and oracles, music, song and poetry, archery, healing, plague and disease, and the protection of the young. He was depicted as a handsome, beardless youth with long hair and attributes such as a wreath and branch of laurel, bow and quiver of arrows, raven, and lyre."},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Phoebus"],
+       "fr":"Phoebus"
+    },
+    "p:sacredPlant":["mythp:Laurel","mythp:larkspur","mythp:cypress"],
+    "p:sacredAnimal":["mytha:Swan","mytha:Raven"],
+    "p:godOf":["Music","prophecy","healing","archery"],
+    "p:romanName":"Apollo",
+    "p:livesIn":"Mount Olympus",
+    "p:symbol":["Lyre","Bow"],
+    "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "relatives": {
+      "father":"gim:Zeus",
+      "mother":"gim:Leto",
+      "spouses": ["gim:Hera"],
+      "lovers": ["gim:Semele","gim:Europe"],
+      "children": ["gim:Aphrodite","gim:Dyonisos","gim:Hercule","gim:Athena","gim:Appolo","gim:Hermes"]
+    }
+    }
+    ]
+}
