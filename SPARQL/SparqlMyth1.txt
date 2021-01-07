@@ -1,0 +1,57 @@
+select ?p (COUNT(?s) AS ?ELEMENTCOUNT) (max(?s1) as ?max) (SAMPLE(?s) AS ?NAME) 
+where 
+{ {?p a <http://www.w3.org/2002/07/owl#ObjectProperty> .
+  OPTIONAL {?s ?p ?o} . }
+ UNION {?s1 ?p ?o1}
+}
+GROUP BY ?p 
+order by ?p
+
+prefix : <http://www.semanticweb.org/ontologies/mythologie#> 
+prefix m: <http://www.w3.org/mythologie/class#> 
+prefix p: <http://www.w3.org/mythologie/property#> 
+prefix t: <http://www.semanticweb.org/ontologies/mythologie/temple/> 
+prefix wd: <http://www.wikidata.org/entity/> 
+prefix gim: <http://www.w3.org/mythologie/greek/immortal/> 
+prefix gmo: <http://www.w3.org/mythologie/greek/mortal/> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rim: <http://www.w3.org/mythologie/roman/immortal/> 
+prefix rom: <http://www.w3.org/mythologie/roman/immortal/> 
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix auth: <http://www.semanticweb.org/ontologies/mythologie/author/> 
+prefix myth: <http://www.semanticweb.org/ontologies/mythologie/> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix skos: <http://www.w3.org/2004/02/skos/core#> 
+prefix mytha: <http://www.semanticweb.org/ontologies/mythologie/creature/> 
+prefix mythp: <http://www.semanticweb.org/ontologies/mythologie/plant/> 
+select distinct ?s ?class
+where {?s a :HumanNonhumanBeing; a ?class FILTER(?class != skos:Concept && ?class != :HumanNonhumanBeing)
+      } Order by ?s ?class
+      
+select *
+{?s a owl:Class}
+
+prefix : <http://www.semanticweb.org/ontologies/mythologie#> 
+prefix m: <http://www.w3.org/mythologie/class#> 
+prefix p: <http://www.w3.org/mythologie/property#> 
+prefix t: <http://www.semanticweb.org/ontologies/mythologie/temple/> 
+prefix wd: <http://www.wikidata.org/entity/> 
+prefix gim: <http://www.w3.org/mythologie/greek/immortal#> 
+prefix gmo: <http://www.w3.org/mythologie/greek/mortal#> 
+prefix owl: <http://www.w3.org/2002/07/owl#> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rim: <http://www.w3.org/mythologie/roman/immortal#> 
+prefix rom: <http://www.w3.org/mythologie/roman/immortal#> 
+prefix xml: <http://www.w3.org/XML/1998/namespace> 
+prefix xsd: <http://www.w3.org/2001/XMLSchema#> 
+prefix auth: <http://www.semanticweb.org/ontologies/mythologie/author/> 
+prefix myth: <http://www.semanticweb.org/ontologies/mythologie/> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix skos: <http://www.w3.org/2004/02/skos/core#> 
+prefix mytha: <http://www.semanticweb.org/ontologies/mythologie/creature/> 
+prefix mythp: <http://www.semanticweb.org/ontologies/mythologie/plant/> 
+select *
+where {?s a :Olympian}
+      
