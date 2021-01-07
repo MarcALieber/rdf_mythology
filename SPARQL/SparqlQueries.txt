@@ -1,1 +1,17 @@
+-- Q001 show all
 select * where {?s ?p ?o}
+
+-- Q002 list all object properties and count the number of time it has been used
+select ?p (COUNT(?s) AS ?ELEMENTCOUNT) (max(?s1) as ?max) (SAMPLE(?s) AS ?NAME) 
+where 
+{ {?p a <http://www.w3.org/2002/07/owl#ObjectProperty> .
+  OPTIONAL {?s ?p ?o} . }
+ UNION {?s1 ?p ?o1}
+}
+GROUP BY ?p 
+order by ?p
+
+-- Q003 count triples for each named Graph
+select ?g (count(?s) as ?tot)
+where {GRAPH ?g {?s ?p ?o}}
+group by ?g

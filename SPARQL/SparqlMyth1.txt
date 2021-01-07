@@ -1,12 +1,4 @@
-select ?p (COUNT(?s) AS ?ELEMENTCOUNT) (max(?s1) as ?max) (SAMPLE(?s) AS ?NAME) 
-where 
-{ {?p a <http://www.w3.org/2002/07/owl#ObjectProperty> .
-  OPTIONAL {?s ?p ?o} . }
- UNION {?s1 ?p ?o1}
-}
-GROUP BY ?p 
-order by ?p
-
+-- Q101 show all concepts of type HumanNonhumanBeing ( reasoning must be activated)
 prefix : <http://www.semanticweb.org/ontologies/mythologie#> 
 prefix m: <http://www.w3.org/mythologie/class#> 
 prefix p: <http://www.w3.org/mythologie/property#> 
@@ -33,6 +25,7 @@ where {?s a :HumanNonhumanBeing; a ?class FILTER(?class != skos:Concept && ?clas
 select *
 {?s a owl:Class}
 
+-- Q102 list all Olympian
 prefix : <http://www.semanticweb.org/ontologies/mythologie#> 
 prefix m: <http://www.w3.org/mythologie/class#> 
 prefix p: <http://www.w3.org/mythologie/property#> 
