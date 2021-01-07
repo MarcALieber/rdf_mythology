@@ -1,0 +1,70 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "mytha": "http://www.semanticweb.org/ontologies/mythologie/creature/",
+	    "auth": "http://www.semanticweb.org/ontologies/mythologie/author/",
+	    "symbol": "http://www.w3.org/mythologie/symbol/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {"@type": "@id"},
+		"skos:inScheme": {"@type": "@id"},
+		"skos:related": {"@type": "@id"	},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {
+			"@type": "@id"
+		},
+		"skos:topConceptOf": {
+			"@type": "@id"
+		},
+		"p:mentionedBy":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "symbol:Lyre",
+	"@type": ["skos:Concept","Symbol"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Lyre",
+	     "fr": "Lyre"
+		}
+	},
+	{"@id": "symbol:Bow",
+	"@type": ["skos:Concept","Symbol"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Bow",
+	     "fr": "Arc"
+		}
+	},
+	{"@id": "symbol:Aegis",
+	"@type": ["skos:Concept","Symbol"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Aegis",
+	     "fr": "Egide"
+		}
+   },
+	{"@id": "symbol:Gorgoneion",
+	"@type": ["skos:Concept","Symbol"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Gorgoneion",
+	     "fr": "tête de Gorgone"
+		},
+	"skos:related":"mytha:Gorgona"
+	}
+  ]
+}

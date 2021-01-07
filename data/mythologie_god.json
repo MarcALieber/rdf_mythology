@@ -1,0 +1,346 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "auth": "http://www.semanticweb.org/ontologies/mythologie/author/",
+	    "t": "http://www.semanticweb.org/ontologies/mythologie/temple/",
+	    "mytha": "http://www.semanticweb.org/ontologies/mythologie/creature/",
+	    "mythp": "http://www.semanticweb.org/ontologies/mythologie/plant/",
+	    "symbol": "http://www.w3.org/mythologie/symbol/",
+	    "geo": "http://www.semanticweb.org/ontologies/mythologie/geography/",
+	    "city": "http://www.semanticweb.org/ontologies/mythologie/city/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "gim":"http://www.w3.org/mythologie/greek/immortal/",
+	    "gmo": "http://www.w3.org/mythologie/greek/mortal/",
+	    "rim": "http://www.w3.org/mythologie/roman/immortal/",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {"@type": "@id"},
+		"skos:inScheme": {"@type": "@id"},
+		"skos:related": {"@type": "@id"},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"p:hasFather": {"@type": "@id"},
+		"p:hasFosterFather": {"@type": "@id"},
+		"p:hasMother": {"@type": "@id"},
+		"p:isLoverOf": {"@type": "@id"},
+		"p:isBrotherOf":{ "@type": "@id" },
+		"p:isHusbandOf":{ "@type": "@id" },		
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {"@type": "@id"},
+		"skos:topConceptOf": {"@type": "@id"},
+		"p:hasRomanCounterpart":{ "@type": "@id" },
+		"p:hasGender":{ "@type": "@id" },
+		"p:isGodOf":{ "@type": "@id" },
+		"p:isGoddessOf":{ "@type": "@id" },
+		"p:sacredPlant":{ "@type": "@id" },
+		"p:sacredAnimal":{ "@type": "@id" },
+		"p:mentionedBy":{ "@type": "@id" },
+		"p:hasTemple":{ "@type": "@id" },
+		"p:hasSymbol":{ "@type": "@id" },
+		"p:BornIn":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "gim:Zeus",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel": 
+	    {"en": "Zeus",
+	     "fr": "Zeus"
+		},
+	"p:hasRomanCounterpart":"rim:Jupiter",
+	"skos:topConceptOf":"myth:GreekMythCharacter",
+	"p:hasGender":"myth:male",
+	"skos:definition":{"en":"ZEUS is the King of the Gods and the god of the sky, weather, law and order, destiny and fate, and kingship"},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Cronides","Cronion"],
+       "fr":"Cronide"
+    },
+    "p:sacredPlant":["mythp:OakTree","mythp:OliveTree"],
+    "p:sacredAnimal":["mytha:Eagle","mytha:Bull"],
+    "p:mentionedBy":["auth:Homer","auth:Euripide"],
+    "p:hasTemple":["t:Olympe","t:Dodone"],
+        "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea",
+    "p:isHusbandOf":"gim:Hera",
+    "p:isBrotherOf":["gim:Poseidon","gim:Ares","gim:Hephaestus","gim:Hera"],
+    "p:isLoverOf":["gim:Semele","gim:Europe"]
+    },
+    {"@id": "gim:Apollo",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Apollo",
+	     "fr": "Apollon"
+		},
+	"p:hasRomanCounterpart":"rim:Apollon",
+	"p:hasGender":"myth:male",
+	"skos:definition":{"en":"APOLLON (Apollo) was the Olympian god of prophecy and oracles, music, song and poetry, archery, healing, plague and disease, and the protection of the young. He was depicted as a handsome, beardless youth with long hair and attributes such as a wreath and branch of laurel, bow and quiver of arrows, raven, and lyre."},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Phoebus"],
+       "fr":"Phoebus"
+    },
+    "p:sacredPlant":["mythp:Laurel","mythp:Larkspur","mythp:Cypress"],
+    "p:sacredAnimal":["mytha:Swan","mytha:Raven"],
+    "p:isGodOf":["Music","prophecy","healing","archery"],
+    "p:livesIn":"geo:MountOlympus",
+    "p:hasSymbol":["symbol:Lyre","symbol:Bow"],
+    "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Leto",
+    "p:BornIn":"geo:Delos",
+    "p:isLoverOf":["gim:Semele","gim:Europe"]
+    },
+    {"@id": "gim:Athena",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Athena",
+        "fr": "Athéna"
+		},
+	"p:hasRomanCounterpart":"rim:Minerva",
+	"p:hasGender":"myth:female",
+	"skos:definition":{"en":"ATHENE (Athena) was the Olympian goddess of wisdom and good counsel, war, the defence of towns, heroic endeavour, weaving, pottery and various other crafts. She was depicted as a stately woman armed with a shield and spear, and wearing a long robe, crested helm, and the famed aigis--a snake-trimmed cape adorned with the monstrous visage of the Gorgon Medousa (Medusa)"},
+	"dcterms:modified": "2020-12-16",
+	"dc:creator":"Marc Lieber",
+	"ical:dtstart": "2020-12-15T00:00:00Z",
+	"skos:altLabel": {
+       "en":["Pallas","Tritogeneia"],
+       "fr":["Pallas","Tritogénia"]
+    },
+    "p:sacredPlant":["mythp:OliveTree"],
+    "p:sacredAnimal":["mytha:Owl"],
+    "p:isGoddessOf":["Wisdom","Weaving","crafts"],
+    "p:livesIn":"geo:MountOlympus",
+    "p:hasSymbol":["symbol:Aegis","symbol:Gorgoneion"],
+    "images": {
+      "p:thumbnail":"https://www.theoi.com/image/K1.1Zeus.jpg",
+      "p:regular":"https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"
+    },
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Metis"
+    },
+    {"@id": "gim:Hera",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Hera",
+	    "fr": "Héra"
+		},
+	"skos:definition":{"en":"HERA was the Olympian queen of the gods, and the goddess of marriage, women, the sky and the stars of heaven. She was usually depicted as a beautiful woman wearing a crown and holding a royal, lotus-tipped sceptre, and sometimes accompanied by a lion, cuckoo or hawk."},
+	"p:hasRomanCounterpart":"rim:Juno",
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea"
+    },
+	{"@id": "gim:Aphrodite",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Aphrodite",
+	    "fr": "Aphrodite"
+		},
+	"skos:definition":{"en":"APHRODITE was the Olympian goddess of love, beauty, pleasure and procreation. She was depicted as a beautiful woman often accompanied by the winged godling Eros (Love). Her attributes included a dove, apple, scallop shell and mirror. In classical sculpture and fresco she was usually depicted nude"},
+	"p:hasRomanCounterpart":"rim:Venus",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Dione"
+    },
+	{"@id": "gim:Hestia",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Hestia",
+	    "fr": "Hestia"
+		},
+	"skos:definition":{"en":"HESTIA was the virgin goddess of the hearth (both private and municipal) and the home. As the goddess of the family hearth she also presided over the cooking of bread and the preparation of the family meal. Hestia was also the goddess of the sacrificial flame and received a share of every sacrifice to the gods. The cooking of the communal feast of sacrificial meat was naturally a part of her domain."},
+	"p:hasRomanCounterpart":"rim:Vesta",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea"
+    },
+	{"@id": "gim:Demeter",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Demeter",
+	     "fr": "Demeter"
+		},
+	"skos:definition":{"en":"DEMETER was the Olympian goddess of agriculture, grain and bread who sustained mankind with the earth's rich bounty. She presided over the foremost of the Mystery Cults which promised its intiates the path to a blessed afterlife in the realm of Elysium. Demeter was depicted as a mature woman, often wearing a crown and bearing sheafs of wheat or a cornucopia (horn of plenty), and a torch."},
+	"p:hasRomanCounterpart":"rim:Ceres",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea"
+    },
+	{"@id": "gim:Artemis",
+	"@type": ["skos:Concept","OlympianGoddess","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Artemis",
+	     "fr": "Artémis"
+		},
+	"skos:definition":{"en":"ARTEMIS was the Olympian goddess of hunting, the wilderness and wild animals. She was also a goddess of childbirth, and the protectress of the girl child up to the age of marriage--her twin brother Apollon was similarly the protector of the boy child. Together the two gods were also bringers of sudden death and disease--Artemis targetted women and girls, Apollon men and boys.In ancient art Artemis was usually depicted as a girl or young maiden with a hunting bow and quiver of arrows."},
+	"p:hasRomanCounterpart":"rim:Diana",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Leto",
+    "p:BornIn":"geo:Delos"
+    },
+	{"@id": "gim:Poseidon",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Poseidon",
+	     "fr": "Poséïdon"
+		},
+	"skos:definition":{"en":"POSEIDON was the Olympian god of the sea, earthquakes, floods, drought and horses.He was depicted as a mature man with a sturdy build and dark beard holding a trident (a three-pronged fisherman's spear)."},
+	"p:hasRomanCounterpart":"rim:Neptune",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea"
+    },
+	{"@id": "gim:Ares",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Ares",
+	     "fr": "Arès"
+		},
+	"skos:definition":{"en":"ARES was the Olympian god of war, battlelust, courage and civil order. In ancient Greek art he was depicted as either a mature, bearded warrior armed for battle, or a nude, beardless youth with a helm and spear."},
+	"p:hasRomanCounterpart":"rim:Mars",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Hera"
+    },
+	{"@id": "gim:Dionysos",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Dionysos",
+	     "fr": "Dionysos"
+		},
+	"skos:definition":{"en":"DIONYSOS (Dionysus) was the Olympian god of wine, vegetation, pleasure, festivity, madness and wild frenzy. He was depicted as either an older, bearded god or an effeminate, long-haired youth. His attributes included the thyrsos (a pine-cone tipped staff), a drinking cup and a crown of ivy. He was usually accompanied by a troop of Satyrs and Mainades (wild female devotees)."},
+	"p:hasRomanCounterpart":"rim:Liber",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Semele"
+    },
+	{"@id": "gim:Hephaistos",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Hephaistos",
+	     "fr": "Héphaistos"
+		},
+	"skos:definition":{"en":"HEPHAISTOS (Hephaestus) was the Olympian god of fire, smiths, craftsmen, metalworking, stonemasonry and sculpture. He was depicted as a bearded man holding a hammer and tongs--the tools of a smith--and sometimes riding a donkey."},
+	"p:hasRomanCounterpart":"rim:Vulcan",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasMother":"gim:Hera"
+    },
+	{"@id": "gim:Hades",
+	"@type": ["skos:Concept","ChtonicDeity"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Hades",
+	     "fr": "Hadès"
+		},
+	"skos:definition":{"en":"HAIDES (Hades) was the king of the underworld and god of the dead. He presided over funeral rites and defended the right of the dead to due burial. Haides was also the god of the hidden wealth of the earth, from the fertile soil with nourished the seed-grain, to the mined wealth of gold, silver and other metals."},
+	"p:hasRomanCounterpart":"rim:Pluto",
+	"p:livesIn":"geo:Hades",
+    "p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Rhea"
+	},
+	{"@id": "gim:Hermes",
+	"@type": ["skos:Concept","OlympianGod","Olympian"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Hermes",
+	     "fr": "Hermès"
+		},
+	"skos:definition":{"en":"HERMES was the Olympian god of herds and flocks, travellers and hospitality, roads and trade, thievery and cunning, heralds and diplomacy, language and writing, athletic contests and gymnasiums, astronomy and astrology. He was the herald and personal messenger of Zeus, King of the Gods, and also the guide of the dead who led souls down into the underworld."},
+	"p:hasRomanCounterpart":"rim:Mercury",
+	"p:livesIn":"geo:MountOlympus",
+    "p:hasFather":"gim:Zeus",
+    "p:hasMother":"gim:Maia"
+    },
+	{"@id": "gim:Kronos",
+	"@type": ["skos:Concept","Uranides"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Kronos",
+	    "fr": "Kronos"
+		},
+	"skos:definition":{"en":"KRONOS (Cronus) was the King of the Titanes and the god of time, in particular time when viewed as a destructive, all-devouring force."},
+	"p:hasRomanCounterpart":"rim:Saturn",
+	"p:livesIn":["geo:Tartarus","geo:Elysium"],
+	"p:hasFather":"gim:Uranus",
+    "p:hasMother":"gim:Gaea"
+    },
+	{"@id": "gim:Rhea",
+	"@type": ["skos:Concept","Titanides"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Rhea",
+	    "fr": "Rhéa"
+		},
+	"skos:definition":{"en":"RHEIA (Rhea) was the Titanis (Titaness) mother of the gods, and goddess of female fertility, motherhood, and generation. Her name means flow and ease. As the wife of Kronos (Cronus, Time), she represented the eternal flow of time and generations; as the great Mother (Meter Megale), the flow was menstrual blood, birth waters, and milk"},
+	"p:hasRomanCounterpart":"rim:Ops",
+	"p:livesIn":["geo:Tartarus","geo:Elysium"],
+    "p:hasFather":"gim:Uranus",
+    "p:hasMother":"gim:Gaea"
+    },
+	{"@id": "gim:Uranus",
+	"@type": ["skos:Concept","protogenoi"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Uranus",
+	    "fr": "Ouranos"
+		},
+	"skos:definition":{"en":"OURANOS (Uranus) was the primordial god (protogenos) of the sky. The Greeks imagined the sky as a solid dome of brass, decorated with stars, whose edges descended to rest upon the outermost limits of the flat earth. Ouranos was the literal sky, just as his consort Gaia (Gaea) was the earth"},
+	"p:hasRomanCounterpart":"rim:Caelum",
+	"p:livesIn":"geo:Sky",
+    "p:hasMother":"gim:Gaea"
+    },
+	{"@id": "gim:Gaea",
+	"@type": ["skos:Concept","protogenoi"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Gaea",
+	    "fr": "Gaéa"
+		},
+	"skos:definition":{"en":"GAIA (Gaea) was the goddess of the earth. She was one of the primoridal elemental deities (protogenoi) born at the dawn of creation. Gaia was the great mother of all creation--the heavenly gods were descended from her through her union with Ouranos (Uranus) (Sky), the sea-gods from her union with Pontos (Sea), the Gigantes (Giants) from her mating with Tartaros (the Pit), and mortal creatures born directly from her earthy flesh."},
+	"p:hasRomanCounterpart":"rim:Terra",
+	"p:livesIn":"geo:Earth"
+	},
+	{"@id": "gim:Thetis",
+	"@type": ["skos:Concept","protogenoi"],
+	"skos:inScheme": "myth:GreekMythCharacter",
+	"skos:prefLabel":
+	   {"en": "Thetis",
+	    "fr": "Thetis"
+		}
+    }
+   ]
+}
