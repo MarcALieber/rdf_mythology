@@ -1,0 +1,158 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "geo": "http://www.semanticweb.org/ontologies/mythologie/geography/",
+	    "city": "http://www.semanticweb.org/ontologies/mythologie/city/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {"@type": "@id"},
+		"skos:inScheme": {"@type": "@id"},
+		"skos:related": {"@type": "@id"},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {"@type": "@id"},
+		"skos:topConceptOf": {"@type": "@id"},
+		"p:isLocated":{ "@type": "@id" },
+		"p:mentionedIn":{ "@type": "@id" },
+		"p:hasTemple":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "geo:Epirus",
+	"@type": ["skos:Concept","Region"],
+	"skos:inScheme": ["myth:Greece"],
+	"skos:prefLabel": 
+	    {"en": "Epirus",
+	     "fr": "Epire"
+		},
+     "p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:MountParnassus",
+	"@type": ["skos:Concept","Region"],
+	"skos:inScheme": ["myth:Greece"],
+	"skos:prefLabel": 
+	    {"en": "Mount Parnassus",
+	     "fr": "Mont Parnasse"
+		},
+     "p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:Delos",
+	"@type": ["skos:Concept","Island"],
+	"skos:inScheme": ["myth:Greece","myth:SacredPlace"],
+	"skos:prefLabel": 
+	    {"en": "Delos",
+	     "fr": "Délos"
+		},
+     "p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:MountOlympus",
+	"@type": ["skos:Concept","Region","MythologicalPlace"],
+	"skos:inScheme": ["myth:Greece","myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Mount Olympus",
+	     "fr": "Mont Olympe"
+		},
+     "p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:Greece",
+	"@type": ["skos:Concept","Region"],
+	"skos:inScheme": ["myth:Greece"],
+	"skos:prefLabel": 
+	    {"en": "Greece",
+	     "fr": "Grèce"
+		},
+     "p:isLocatedIn":"geo:Europe"
+},
+{"@id": "geo:Europe",
+	"@type": ["skos:Concept","Region"],
+	"skos:inScheme": ["myth:GeographicWorld"],
+	"skos:prefLabel": 
+	    {"en": "Europe",
+	     "fr": "Europe"
+		}
+},
+{"@id": "geo:Athene",
+	"@type": ["skos:Concept","City"],
+	"skos:inScheme": ["myth:Greece"],
+	"skos:prefLabel": 
+	    {"en": "Athene",
+	     "fr": "Athène"
+		},
+     "p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:Constantinople",
+	"@type": ["skos:Concept","City"],
+	"skos:inScheme": ["myth:GreekAsia","myth:RomanEmpire","myth:OttomanEmpire"],
+	"skos:prefLabel": 
+	    {"en": "Constantinople",
+	     "fr": "Constantinople"
+		},
+	 "skos:altLabel": 
+	    {"en": ["Bizance","Istanbul"],
+	     "fr": ["Bizance","Istanbul"]
+	     },
+     "p:isLocatedIn":"geo:Thrace"
+},
+{"@id": "geo:Thrace",
+	"@type": ["skos:Concept","Region"],
+	"skos:inScheme": ["myth:GreekAsia","myth:RomanEmpire","myth:OttomanEmpire"],
+	"skos:prefLabel": 
+	    {"en": "Thrace",
+	     "fr": "Thrace"
+		},
+	"p:isLocatedIn":"geo:Greece"
+},
+{"@id": "geo:Hades",
+	"@type": ["skos:Concept","MythologicalPlace"],
+	"skos:inScheme": ["myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Hades",
+	     "fr": "Hadès"
+		}
+},
+{"@id": "geo:Tartarus",
+	"@type": ["skos:Concept","MythologicalPlace"],
+	"skos:inScheme": ["myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Tartarus",
+	     "fr": "Tartare"
+		}
+},
+{"@id": "geo:Elysium",
+	"@type": ["skos:Concept","MythologicalPlace"],
+	"skos:inScheme": ["myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Elysum",
+	     "fr": "Elysée"
+		}
+},
+{"@id": "geo:Sky",
+	"@type": ["skos:Concept","MythologicalPlace"],
+	"skos:inScheme": ["myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Sky",
+	     "fr": "les Cieux"
+		}
+},
+{"@id": "geo:Earth",
+	"@type": ["skos:Concept","MythologicalPlace"],
+	"skos:inScheme": ["myth:GreekMythologie"],
+	"skos:prefLabel": 
+	    {"en": "Earth",
+	     "fr": "la Terre"
+		}
+}
+]
+}

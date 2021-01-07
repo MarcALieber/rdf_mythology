@@ -1,0 +1,83 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "auth": "http://www.semanticweb.org/ontologies/mythologie/author/",
+	    "mythp": "http://www.semanticweb.org/ontologies/mythologie/plant/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {
+			"@type": "@id"
+		},
+		"skos:inScheme": {
+			"@type": "@id"
+		},
+		"skos:related": {
+			"@type": "@id"
+		},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {
+			"@type": "@id"
+		},
+		"skos:topConceptOf": {
+			"@type": "@id"
+		},
+		"p:sacredPlant":{ "@type": "@id" },
+		"p:mentionedBy":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "mythp:Laurel",
+	"@type": ["skos:Concept","sacredPlant"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Laurel",
+	     "fr": "Laurier"
+		}
+	},
+	{"@id": "mythp:Larkspur",
+	"@type": ["skos:Concept","sacredPlant"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Larkspur",
+	     "fr": "Pied d'alouette"
+		}
+	},
+	{"@id": "mythp:Cypress",
+	"@type": ["skos:Concept","sacredTree"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Cypress",
+	     "fr": "Cyprès"
+		}
+   },
+	{"@id": "mythp:OliveTree",
+	"@type": ["skos:Concept","sacredTree"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "OliveTree",
+	     "fr": "Olivier"
+		}
+   },
+	{"@id": "mythp:OakTree",
+	"@type": ["skos:Concept","sacredTree"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "OakTree",
+	     "fr": "Chêne"
+		}
+   }
+  ]
+}

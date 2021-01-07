@@ -1,0 +1,185 @@
+{
+	"@context": {
+	    "@vocab": "http://www.semanticweb.org/ontologies/mythologie#",
+	    "myth": "http://www.semanticweb.org/ontologies/mythologie/",
+	    "auth": "http://www.semanticweb.org/ontologies/mythologie/author/",
+	    "t": "http://www.semanticweb.org/ontologies/mythologie/temple/",
+	    "mytha": "http://www.semanticweb.org/ontologies/mythologie/creature/",
+	    "mythp": "http://www.semanticweb.org/ontologies/mythologie/plant/",
+	    "m": "http://www.w3.org/mythologie/class#",
+	    "p": "http://www.w3.org/mythologie/property#",
+	    "gim":"http://www.w3.org/mythologie/greek/immortal/",
+	    "gmo": "http://www.w3.org/mythologie/greek/mortal/",
+	    "rim": "http://www.w3.org/mythologie/roman/immortal/",
+	    "owl": "http://www.w3.org/2002/07/owl#",
+	    "dc": "http://purl.org/dc/elements/1.1/",
+	    "dcterms": "http://purl.org/dc/terms/",
+		"skos": "http://www.w3.org/2004/02/skos/core#",
+		"xsd": "http://www.w3.org/2001/XMLSchema#",
+		"ical": "http://www.w3.org/2002/12/cal/ical#",
+		"skos:broader": {"@type": "@id"	},
+		"skos:inScheme": {"@type": "@id"},
+		"skos:related": {"@type": "@id"	},
+		"skos:altLabel": {"@container" : "@language" },
+		"skos:prefLabel": {"@container" : "@language"},
+		"skos:definition": {"@container" : "@language"},
+		"title": { "@container" : "@language" },
+		"p:thumbnail": {"@type": "xsd:string"},
+		"p:regular": {"@type": "xsd:string"},
+		"dcterms:modified":{"@type": "dcterms:W3CDTF"},
+		"skos:narrower": {"@type": "@id"},
+		"skos:hasTopConcept": {
+			"@type": "@id"
+		},
+		"skos:topConceptOf": {
+			"@type": "@id"
+		},
+		"p:hasGender":{ "@type": "@id" },
+		"p:mentionedBy":{ "@type": "@id" },
+		"p:hasFather": {"@type": "@id"},
+		"p:hasFosterFather": {"@type": "@id"},
+		"p:hasMother": {"@type": "@id"},
+		"p:hasTemple":{ "@type": "@id" },
+		"ical:dtstart": { "@type": "xsd:dateTime" }
+		},
+"@graph": [{"@id": "mytha:Horse",
+	"@type": ["skos:Concept","Quadriped"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Horse",
+	     "fr": "Cheval"
+		}
+	   },
+	   {"@id": "mytha:Chiron",
+	"@type": ["skos:Concept","Centaure"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Chiron",
+	     "fr": "Chiron"
+		},
+	"p:hasFather":"gim:Kronos",
+    "p:hasMother":"gim:Philyra"
+	   },
+	   {"@id": "mytha:Minautore",
+	"@type": ["skos:Concept","Quadriped","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Minautore",
+	     "fr": "Minautore"
+		}
+	   },
+	   {"@id": "mytha:HydraOfLerne",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Hydra of Lerne",
+	     "fr": "Hydre de Lerne"
+		},
+	"p:hasFather":"gim:Typhon",
+    "p:hasMother":"gim:Echidna"
+	   },
+	   {"@id": "mytha:Pegasus",
+	"@type": ["skos:Concept","Quadriped","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Pegasus",
+	     "fr": "Pégase"
+		},
+    "p:hasMother":"mytha:Gorgona"
+	   },
+	   {"@id": "mytha:Gorgona",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:definition":{"en":"THE GORGONES (Gorgons) were three powerful, winged daimones named Medousa (Medusa), Sthenno and Euryale. Of the three sisters only Medousa was mortal."}, 
+	"skos:prefLabel": 
+	    {"en": "Gorgona",
+	     "fr": "Gorgone"
+		},
+	"p:hasMother":"mytha:Phorcys",
+	"p:hasFather":"mytha:Ceto"
+	},
+	{"@id": "mytha:Medusa",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Medusa",
+	     "fr": "Medusa"
+		},
+	"skos:broader": "mytha:Gorgona"
+	},
+	   {"@id": "mytha:Sthenno",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Sthenno",
+	     "fr": "Sthenno"
+		},
+	"skos:broader": "mytha:Gorgona"
+	},
+	   {"@id": "mytha:Euryale",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Euryale",
+	     "fr": "Euryale"
+		},
+	"skos:broader": "mytha:Gorgona"
+	},
+	   {"@id": "mytha:Eagle",
+	"@type": ["skos:Concept","Bird"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Eagle",
+	     "fr": "Aigle"
+		}
+	   },
+	   {"@id": "mytha:Bull",
+	"@type": ["skos:Concept","Quadriped"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Bull",
+	     "fr": "Taureau"
+		}
+	   },
+	   {"@id": "mytha:Swan",
+	"@type": ["skos:Concept","Bird"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Swan",
+	     "fr": "Cigne"
+		}
+	   },
+	   {"@id": "mytha:Owl",
+	"@type": ["skos:Concept","Bird"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Owl",
+	     "fr": "Hibou"
+		}
+	   },
+	   {"@id": "mytha:Raven",
+	"@type": ["skos:Concept","Bird"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Raven",
+	     "fr": "Corbeau"
+		}
+	   },
+	   {"@id": "mytha:Dragon",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Dragon",
+	     "fr": "Dragon"
+		}
+	   },
+	   {"@id": "mytha:Chimera",
+	"@type": ["skos:Concept","Monster"],
+	"skos:inScheme": "myth:GreekMythologie",
+	"skos:prefLabel": 
+	    {"en": "Chimera",
+	     "fr": "Chimère"
+		}
+	   }
+    ]
+}
