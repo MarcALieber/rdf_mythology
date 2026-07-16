@@ -1,0 +1,163 @@
+-- all graphs
+select ?graph (count(?s) as ?cnt)
+where {graph ?graph {?s ?p ?o   }
+} group by ?graph
+
+-- check for missing properties in metamodel
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT distinct ?p ?prop ?check
+WHERE {graph g:data {
+ ?s a skos:Concept; ?p ?o .
+    OPTIONAL {graph g:metamodel {?p a ?prop} }
+    BIND(BOUND(?prop) && strlen(?prop)>0 as ?check) FILTER (?check=false)
+  }}
+
+-- check for blank nodes
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT distinct ?p ?p2
+WHERE {graph g:data {
+ ?s ?p ?o FILTER isBlank(?o) .
+ ?o ?p2 ?o2
+}} 
+
+-*- list of skos:concept check if prefLabel exists and wikidata exists TODO add comment and notification and french prefLabel
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?s ?label ?match
+WHERE {graph g:data {
+ ?s a skos:Concept
+    OPTIONAL {?s skos:prefLabel ?label filter (langmatches(lang(?label), "en")) }
+    OPTIONAL {?s skos:exactMatch ?match}
+}} 
+
+-*- check for any missing property
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?p (max(?o) as ?sample) ?type
+WHERE {graph g:data { ?s ?p ?o  FILTER(?p != skos:exactMatch && ?p != skos:inScheme && ?p != skos:topConceptOf ) .
+    OPTIONAL {graph g:metamodel {?p a ?type}
+      FILTER(?type = owl:ObjectProperty ||?type = owl:DatatypeProperty )}
+  }} group by ?p ?type
+order by ?p
+
+-*- check for any missing property
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?p ?t
+WHERE {graph g:data { ?s ?p ?o  
+    OPTIONAL{graph g:metamodel {?p a ?t }} 
+  }}
+group by ?p ?t
+order by ?p
+
+-*- Check for ?s ?p ?o where ?o is not a skosConcept
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?s ?p ?o ?prop ?p2 ?check
+WHERE {graph g:data { ?s ?p ?o  FILTER(?p != skos:exactMatch && ?p != skos:inScheme && ?p != skos:topConceptOf && ?o != <http://www.semanticweb.org/mythologies/greek/immortal/Hephaestus>) .
+    graph g:metamodel {?p rdf:type owl:ObjectProperty .}
+    OPTIONAL { ?o a ?p2 FILTER(?p2 = skos:Concept) . }
+    BIND(BOUND(?p2) as ?check) FILTER (?check=false)
+  }
+}
+
+-*- Check for missing prefLabel@en (should return null)
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?s ?label ?match
+WHERE {graph g:data {
+ ?s a skos:Concept
+    OPTIONAL {?s skos:prefLabel ?label filter (langmatches(lang(?label), "en")) }
+    OPTIONAL {?s skos:exactMatch ?match}
+} BIND(BOUND(?label) as ?check) FILTER (?check=false)
+}  
+
+-*- Check for missing Wikidata 
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX myth: <http://www.semanticweb.org/ontologies/mythologies#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+prefix sch: <http://www.semanticweb.org/mythologies/scheme/> 
+select ?ent ?wikidata ?check
+where { graph g:data { ?ent a skos:Concept
+    OPTIONAL {?ent skos:exactMatch ?wikidata . FILTER(regex(str(?wikidata), "www.wikidata.org" ) )  
+    } BIND(BOUND(?wikidata) as ?check) FILTER (?check=false)
+  }
+} 
+
+-*- mismatch on rdf:type : class not found in metamodel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX myth: <http://www.semanticweb.org/ontologies/mythologies#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix ns0: <http://www.semanticweb.org/ontologies/mythologies#> 
+prefix ns1: <http://www.semanticweb.org/mythologies/property#> 
+prefix ns2: <http://www.w3.org/2002/12/cal/ical#> 
+prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?type ?t2
+WHERE {graph g:data { ?s a ?type  
+    OPTIONAL{graph g:metamodel {?type a ?t2 }} 
+  }}
+group by ?type ?t2
+order by ?type
+
+-*- mismatch on skos:inScheme : class not found in metamodel
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX myth: <http://www.semanticweb.org/ontologies/mythologies#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix ns0: <http://www.semanticweb.org/ontologies/mythologies#> 
+prefix ns1: <http://www.semanticweb.org/mythologies/property#> 
+prefix ns2: <http://www.w3.org/2002/12/cal/ical#> 
+prefix g: <http://www.semanticweb.org/mythologies/>
+SELECT ?type ?t2
+WHERE {graph g:data { ?s skos:inScheme ?type  
+    OPTIONAL{graph g:metamodel {?type a ?t2 }} 
+  }}
+group by ?type ?t2
+order by ?type
+
+-- Duplicate wikidata ID
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX myth: <http://www.semanticweb.org/ontologies/mythologies#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+prefix sch: <http://www.semanticweb.org/mythologies/scheme/> 
+select ?wikidata (max(?ent) as ?dup) (min(?ent) as ?dup2)
+where { graph g:data { ?ent skos:exactMatch ?wikidata . FILTER(regex(str(?wikidata), "www.wikidata.org" ) )  
+  }
+} group by ?wikidata
+having (count(?wikidata) > 1 )
+
+-- entity without gender over myth:HumanNonhumanBeing or myth:MythicAnimals 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX myth: <http://www.semanticweb.org/ontologies/mythologies#>
+Prefix g: <http://www.semanticweb.org/mythologies/>
+prefix p: <http://www.semanticweb.org/mythologies/property#> 
+select ?class ?ent ?gender ?check
+where {graph g:metamodel {?class rdfs:subClassOf* myth:HumanNonhumanBeing . 
+    {graph g:data {?ent a ?class . OPTIONAL{?ent p:hasGender ?gender}
+     BIND(BOUND(?gender) as ?check) FILTER (?check=false) }
+    }
+   } 
+}  
+order by ?ent ?class
+
+-- TODO check for misplaced properties (if domain and range defined)
+
+-- TODO : a concept must not be linked to a concept scheme through rdf:type (example :LegendOfTroy)
