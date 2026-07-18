@@ -1,0 +1,283 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix ns2: <http://www.w3.org/2002/12/cal/ical#> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix an: <http://www.semanticweb.org/mythologies/animal/> .
+@prefix pl: <http://www.semanticweb.org/mythologies/plant/> .
+@prefix sy: <http://www.semanticweb.org/mythologies/symbol/> .
+@prefix att: <http://www.semanticweb.org/mythologies/attribute/> .
+@prefix au: <http://www.semanticweb.org/mythologies/author/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix mo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+gim:Zeus rdf:type owl:NamedIndividual ,skos:Concept, :OlympianGod, :Olympian ;
+  skos:topConceptOf sch:GreekMythCharacter;
+  dc11:creator "Marc Lieber"^^xsd:string ;
+  dc:modified "2020-12-16"^^dc:W3CDTF ;
+  p:image [
+    p:regular "https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"^^xsd:string ;
+    p:thumbnail "https://www.theoi.com/image/K1.1Zeus.jpg"^^xsd:string
+  ] ;
+  ns2:dtstart "2020-12-15T00:00:00Z"^^xsd:dateTime ;
+  skos:altLabel "Cronides"@en, "Cronion"@en, "Cronide"@fr ;
+  skos:definition "ZEUS is the King of the Gods and the god of the sky, weather, law and order, destiny and fate, and kingship"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Zeus"@en, "Zeus"@fr ;
+  skos:topConceptOf sch:GreekMythCharacter ;
+  p:hasFather gim:Kronos ;
+  p:hasGender :male ;
+  p:hasMother gim:Rhea ;
+  p:hasTemple <http://www.semanticweb.org/mythologies/temple/Olympe>, <http://www.semanticweb.org/mythologies/temple/Dodone> ;
+  p:isLoverOf mo:Semele, mo:Europa ;
+  p:mentionedIn au:Homer, au:Euripide ;
+  skos:exactMatch wd:Q34201 ;
+  p:hasGender :male ;
+  p:isHusbandOf gim:Hera ;
+  p:hasRomanCounterpart rim:Jupiter ;
+  p:isBrotherOf gim:Poseidon , gim:Apollo , gim:Ares ,gim:Hephaistos ,gim:Aphrodite ,gim:Hera;
+  p:sacredAnimal an:Eagle, an:Bull ;
+  p:sacredPlant pl:OakTree, pl:OliveTree .
+
+gim:Poseidon a skos:Concept, :OlympianGod, :Olympian ;
+  skos:definition "POSEIDON was the Olympian god of the sea, earthquakes, floods, drought and horses.He was depicted as a mature man with a sturdy build and dark beard holding a trident (a three-pronged fisherman's spear)."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Poseidon"@en, "Poséïdon"@fr ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Kronos> ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Rhea> ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Neptune> ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q41127 ;
+  p:livesIn geo:MountOlympus .
+
+gim:Ares a skos:Concept, :OlympianGod, :Olympian ;
+  skos:definition "ARES was the Olympian god of war, battlelust, courage and civil order. In ancient Greek art he was depicted as either a mature, bearded warrior armed for battle, or a nude, beardless youth with a helm and spear."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Ares"@en, "Arès"@fr ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Zeus> ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Hera> ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Mars> ;
+  p:isLoverOf gim:Aphrodite ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q40901 ;
+  p:livesIn geo:MountOlympus .
+
+gim:Hera rdf:type owl:NamedIndividual ,skos:Concept, :OlympianGoddess, :Olympian ;
+  skos:definition "HERA was the Olympian queen of the gods, and the goddess of marriage, women, the sky and the stars of heaven. She was usually depicted as a beautiful woman wearing a crown and holding a royal, lotus-tipped sceptre, and sometimes accompanied by a lion, cuckoo or hawk."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Hera"@en, "Héra"@fr ;
+  p:hasFather gim:Kronos ;
+  p:hasMother gim:Rhea ;
+  p:isSpouseOf gim:Zeus ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q38012 ;
+  p:hasRomanCounterpart rim:Juno .
+
+gim:Apollo rdf:type owl:NamedIndividual ,skos:Concept, :OlympianGod, :Olympian ;
+  dc11:creator "Marc Lieber"^^xsd:string ;
+  dc:modified "2020-12-16"^^dc:W3CDTF ;
+  p:image [
+    p:regular "https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"^^xsd:string ;
+    p:thumbnail "https://www.theoi.com/image/K1.1Zeus.jpg"^^xsd:string
+  ] ;
+  ns2:dtstart "2020-12-15T00:00:00Z"^^xsd:dateTime ;
+  skos:altLabel "Phoebus"@en, "Phoebus"@fr ;
+  skos:definition "APOLLON (Apollo) was the Olympian god of prophecy and oracles, music, song and poetry, archery, healing, plague and disease, and the protection of the young. He was depicted as a handsome, beardless youth with long hair and attributes such as a wreath and branch of laurel, bow and quiver of arrows, raven, and lyre."@en ;
+  skos:inScheme sch:GreekMythCharacter;
+  skos:prefLabel "Apollo"@en, "Apollon"@fr ;
+  skos:altLabel "Phoebus"@fr ;
+  skos:altLabel "Phoebus"@en ;
+  p:BornIn geo:Delos ;
+  p:hasFather gim:Zeus ;
+  p:hasGender :male ;
+  p:hasMother gim:Leto ;
+  p:hasRomanCounterpart rim:Apollo;
+  p:hasSymbol sy:Lyre, sy:Bow ;
+  p:isGodOf att:Music, att:Prophecy, att:Healing, att:Archery ;
+  p:livesIn geo:MountOlympus ;
+  p:hasTheoiSource "https://www.theoi.com/Olympios/Apollon.html";
+  skos:exactMatch wd:Q37340;
+  skos:exactMatch <http://dbpedia.org/page/Apollo> ;
+  p:sacredAnimal an:Swan, an:Raven ;
+  p:sacredPlant pl:Laurel, pl:Larkspur, pl:Cypress .
+
+gim:Athena a skos:Concept, :OlympianGoddess, :Olympian ;
+  dc11:creator "Marc Lieber"^^xsd:string ;
+  dc:modified "2020-12-16"^^dc:W3CDTF ;
+  p:image [
+    p:regular "https://upload.wikimedia.org/wikipedia/commons/6/66/Le_Jupiter_Olympien_ou_l%27art_de_la_sculpture_antique.jpg"^^xsd:string ;
+    p:thumbnail "https://www.theoi.com/image/K1.1Zeus.jpg"^^xsd:string
+  ] ;
+  ns2:dtstart "2020-12-15T00:00:00Z"^^xsd:dateTime ;
+  skos:altLabel "Pallas"@en, "Tritogeneia"@en, "Pallas"@fr, "Tritogénia"@fr ;
+  skos:definition "ATHENE (Athena) was the Olympian goddess of wisdom and good counsel, war, the defence of towns, heroic endeavour, weaving, pottery and various other crafts. She was depicted as a stately woman armed with a shield and spear, and wearing a long robe, crested helm, and the famed aigis--a snake-trimmed cape adorned with the monstrous visage of the Gorgon Medousa (Medusa)"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Athena"@en, "Athéna"@fr ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Zeus> ;
+  p:hasGender :female ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Metis> ;
+  skos:exactMatch wd:Q37122 ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Minerva> ;
+  p:hasSymbol sy:Aegis, sy:Gorgoneion ;
+  p:isGoddessOf att:Wisdom, att:Weaving, att:Crafts ;
+  p:livesIn geo:MountOlympus ;
+  p:sacredAnimal an:Owl ;
+  p:sacredPlant pl:OliveTree .
+
+gim:Aphrodite rdf:type owl:NamedIndividual ,skos:Concept, :OlympianGoddess, :Olympian ;
+  skos:definition "APHRODITE was the Olympian goddess of love, beauty, pleasure and procreation. She was depicted as a beautiful woman often accompanied by the winged godling Eros (Love). Her attributes included a dove, apple, scallop shell and mirror. In classical sculpture and fresco she was usually depicted nude"@en ;
+  skos:inScheme sch:GreekMythCharacter  ;
+  skos:prefLabel "Aphrodite"@en, "Aphrodite"@fr ;
+  p:hasGender :female ;
+  p:nativeTerm "Αφροδίτη";
+  skos:exactMatch wd:Q35500 ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Zeus> ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Dione> ;
+  p:isSpouseOf gim:Hephaistos ;
+  p:isLoverOf gim:Ares ;
+  p:hasGender :female ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Venus> ;
+  p:livesIn geo:MountOlympus .
+
+gim:Hestia a skos:Concept, :OlympianGoddess, :Olympian ;
+  skos:definition "HESTIA was the virgin goddess of the hearth (both private and municipal) and the home. As the goddess of the family hearth she also presided over the cooking of bread and the preparation of the family meal. Hestia was also the goddess of the sacrificial flame and received a share of every sacrifice to the gods. The cooking of the communal feast of sacrificial meat was naturally a part of her domain."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Hestia"@en, "Hestia"@fr ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Kronos> ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Rhea> ;
+  skos:exactMatch wd:Q41419 ;
+  p:hasGender :female ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Vesta> ;
+  p:livesIn geo:MountOlympus .
+
+gim:Demeter a skos:Concept, :OlympianGoddess, :Olympian ;
+  skos:definition "DEMETER was the Olympian goddess of agriculture, grain and bread who sustained mankind with the earth's rich bounty. She presided over the foremost of the Mystery Cults which promised its intiates the path to a blessed afterlife in the realm of Elysium. Demeter was depicted as a mature woman, often wearing a crown and bearing sheafs of wheat or a cornucopia (horn of plenty), and a torch."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Demeter"@en, "Demeter"@fr ;
+  p:hasFather gim:Kronos ;
+  p:hasMother gim:Rhea ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q40730 ;
+  p:hasRomanCounterpart rim:Ceres ;
+  p:livesIn geo:MountOlympus .
+
+gim:Artemis a skos:Concept, :OlympianGoddess, :Olympian ;
+  skos:definition "ARTEMIS was the Olympian goddess of hunting, the wilderness and wild animals. She was also a goddess of childbirth, and the protectress of the girl child up to the age of marriage--her twin brother Apollon was similarly the protector of the boy child. Together the two gods were also bringers of sudden death and disease--Artemis targetted women and girls, Apollon men and boys.In ancient art Artemis was usually depicted as a girl or young maiden with a hunting bow and quiver of arrows."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Artemis"@en, "Artémis"@fr ;
+  p:BornIn geo:Delos ;
+  p:hasFather gim:Zeus ;
+  p:hasMother gim:Leto ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q39503 ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Diana> ;
+  p:livesIn geo:MountOlympus .
+
+gim:Cybele a skos:Concept, :protogenos, :SkyDeities ;
+  skos:definition "ancient Phrygian Mother of the Gods, a primal nature goddess worshipped with orgiastic rites in the mountains of central and western Anatolia. The Greeks identified her with Rhea"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Cybele"@en, "Cybèle"@fr ;
+  skos:closeMatch gim:Rhea ;
+  p:hasGender :female ;
+  p:isSpouseOf gim:Attis ;
+  p:hasTheoiSource "https://www.theoi.com/Phrygios/Kybele.html";
+  skos:exactMatch wd:Q188236 .
+
+gim:Attis a skos:Concept, :protogenos, :SkyDeities ;
+  skos:definition "Phrygian and Greek mythological figure"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Attis"@en, "Attis"@fr ;
+  skos:closeMatch gim:Zeus ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q262016 .
+  
+gim:Dionysos a owl:NamedIndividual ,skos:Concept, :OlympianGod, :Olympian ;
+  skos:definition "The Olympian god of wine, vegetation, pleasure, festivity, madness and wild frenzy. He was depicted as either an older, bearded god or an effeminate, long-haired youth. His attributes included the thyrsos (a pine-cone tipped staff), a drinking cup and a crown of ivy. He was usually accompanied by a troop of Satyrs and Mainades (wild female devotees)."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Dionysos"@en, "Dionysos"@fr ;
+  skos:altLabel "Dionysus"@en ;
+  skos:exactMatch wd:Q41680;
+  p:hasGender :male ;    
+  p:hasFather gim:Zeus ;
+  p:hasMother mo:Semele ;
+  p:hasRomanCounterpart rim:Liber ;
+  p:livesIn geo:MountOlympus .
+
+gim:Hephaistos rdf:type owl:NamedIndividual ,skos:Concept, :OlympianGod, :Olympian ;
+  skos:definition "The Olympian god of fire, smiths, craftsmen, metalworking, stonemasonry and sculpture. He was depicted as a bearded man holding a hammer and tongs--the tools of a smith--and sometimes riding a donkey."@en ;
+  skos:inScheme sch:GreekMythCharacter  ;
+  skos:prefLabel "Hephaistos"@en, "Héphaistos"@fr ;
+  skos:altLabel "Hephaistus"@en ;
+  skos:exactMatch wd:Q44384;
+  p:hasGender :male ;     
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Hera> ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Vulcan> ;
+  p:livesIn geo:MountOlympus .
+
+gim:Hades a skos:Concept, :ChtonicDeity ;
+  skos:definition "HAIDES (Hades) was the king of the underworld and god of the dead. He presided over funeral rites and defended the right of the dead to due burial. Haides was also the god of the hidden wealth of the earth, from the fertile soil with nourished the seed-grain, to the mined wealth of gold, silver and other metals."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Hades"@en, "Hadès"@fr ;
+  p:hasFather <http://www.semanticweb.org/mythologies/greek/immortal/Kronos> ;
+  p:hasMother <http://www.semanticweb.org/mythologies/greek/immortal/Rhea> ;
+  p:hasRomanCounterpart <http://www.semanticweb.org/mythologies/roman/immortal/Pluto> ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q41410 ;
+  p:livesIn geo:Hades .
+
+gim:Hermes a skos:Concept, :OlympianGod, :Olympian ;
+  skos:definition "HERMES was the Olympian god of herds and flocks, travellers and hospitality, roads and trade, thievery and cunning, heralds and diplomacy, language and writing, athletic contests and gymnasiums, astronomy and astrology. He was the herald and personal messenger of Zeus, King of the Gods, and also the guide of the dead who led souls down into the underworld."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Hermes"@en, "Hermès"@fr ;
+  p:hasFather gim:Zeus ;
+  p:hasMother gim:Maia ;
+  skos:exactMatch wd:Q41484 ;
+  p:hasGender :male ;
+  p:hasRomanCounterpart rim:Mercury ;
+  p:livesIn geo:MountOlympus .
+
+gim:Thetis a skos:Concept, :Nereids;
+  skos:definition "Nereid of Greek mythology";
+  skos:prefLabel "Thetis"@en, "Thetis"@fr ;
+  p:hasGender :female ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:exactMatch wd:Q184437 .
+  
+gim:Persephone a skos:Concept, :ChtonicDeity ;
+  skos:definition "Greek goddess of spring and the queen of the underworld"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Persephone"@en, "Perséphone"@fr ;
+  p:hasFather gim:Zeus ;
+  p:hasMother gim:Demeter ;
+  p:isSpouseOf gim:Hades ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q45967 ;
+  p:hasRomanCounterpart rim:Proserpina ;
+  p:livesIn geo:Hades .
+  
+gim:Circe a skos:Concept, :OtherDeities ;
+  skos:definition "enchantress-goddess in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter , sch:Odyssey ;
+  skos:prefLabel "Circe"@en, "Circé"@fr ;
+  p:hasGender :female ;
+  p:unmarriedPartner mo:Odysseus ;
+  skos:exactMatch wd:Q187602 .
+  
+gim:Calypso a skos:Concept, :Oceanid ;
+  skos:definition "Oceanid of Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter , sch:Odyssey ;
+  skos:prefLabel "Calypso"@en, "Calypso"@fr ;
+  p:hasGender :female ;
+  p:unmarriedPartner mo:Odysseus ;
+  skos:exactMatch wd:Q48961 .
+
+  

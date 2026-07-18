@@ -1,0 +1,184 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+rim:Jupiter rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:topConceptOf :RomanMythCharacter;
+  skos:prefLabel "Jupiter"@en ;
+  skos:prefLabel "Jupiter"@fr ;
+  skos:exactMatch wd:Q4649 ;
+  p:hasGender :male ;
+  skos:definition "chief deity of Roman state religion";
+  skos:inScheme sch:RomanMythCharacter  .
+  
+rim:Apollo rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Apollo"@en ;
+  skos:prefLabel "Apollon"@fr ;
+  skos:exactMatch wd:Q900649;
+  p:hasGender :male ;
+  skos:definition "god in Roman mythology";
+  skos:inScheme sch:RomanMythCharacter  .
+  
+rim:Saturn rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Saturn"@en ;
+  skos:prefLabel "Saturne"@fr ;
+  skos:exactMatch wd:Q134388;
+  p:hasGender :male ;
+  skos:definition "god in ancient Roman mythology";
+  skos:inScheme sch:RomanMythCharacter  .
+
+rim:Pluto rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Pluto"@en ;
+  skos:prefLabel "Pluton"@fr ;
+  skos:exactMatch wd:Q152262 ;
+  p:hasGender :male ;
+  skos:definition "god in Roman religion, Plouton in Greek";
+  skos:inScheme sch:RomanMythCharacter  .
+
+rim:Mars rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Mars"@en ;
+  skos:prefLabel "Mars"@fr ;
+  skos:exactMatch wd:Q112 ;
+  p:hasGender :male ;
+  skos:definition "Roman god of war, guardian of agriculture";
+  skos:inScheme sch:RomanMythCharacter  .
+  
+rim:Vulcan rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Vulcan"@en ;
+  skos:prefLabel "Vulcain"@fr ;
+  skos:exactMatch wd:Q4640 ;
+  p:hasGender :male ;
+  skos:definition "god of both beneficial and hindering fire";
+  skos:inScheme sch:RomanMythCharacter  .
+  
+rim:Neptune rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Neptune"@en ;
+  skos:prefLabel "Neptune"@fr ;
+  skos:exactMatch wd:Q3954;
+  p:hasGender :male ;
+  skos:definition "Roman god of water, particularly the sea, considered equivalent to the Greek Poseidon";
+  skos:inScheme sch:RomanMythCharacter  .
+
+rim:Mercury rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Mercury"@en ;
+  skos:prefLabel "Mercure"@fr ;
+  skos:exactMatch wd:Q1150 ;
+  p:hasGender :male ;
+  skos:definition "Roman god of trade, merchants and travel";
+  skos:inScheme sch:RomanMythCharacter  .
+
+rim:Liber rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Liber"@en ;
+  skos:prefLabel "Liber"@fr ;
+  skos:exactMatch wd:Q1145491 ;
+  p:hasGender :male ;
+  skos:definition "Roman god of wine and fertility";
+  skos:inScheme sch:RomanMythCharacter  .
+
+rim:Caelus rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Caelus"@en ;
+  skos:prefLabel "Uranus"@fr ;
+  skos:exactMatch wd:Q3360794 ;
+  p:nativeTerm "Uranus,Caelum";
+  p:hasGender :male ;
+  skos:definition "Roman god of the sky";
+  skos:inScheme sch:RomanMythCharacter  .
+
+ 
+# Roman Goddess ----------------------------------------------
+    
+rim:Juno rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Juno"@en ;
+  skos:prefLabel "Junon"@fr ;
+  skos:exactMatch wd:Q125046 ;
+  p:hasGender :female ;
+  skos:definition "ancient Roman goddess";
+  skos:inScheme sch:RomanMythCharacter  .
+  
+rim:Minerva rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Minerva"@en ;
+  skos:prefLabel "Minerve"@fr ;
+  skos:exactMatch wd:Q126916 ;
+  p:hasGender :female ;
+  skos:definition "Roman goddess of wisdom and sponsor of arts, trade, and defense";
+  skos:inScheme sch:RomanMythCharacter  .  
+
+rim:Venus rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Venus"@en ;
+  skos:prefLabel "Vénus"@fr ;
+  skos:exactMatch wd:Q47652 ;
+  p:hasGender :female ;
+  skos:definition "Roman goddess of love, sexuality, procreation and pleasure";
+  skos:inScheme sch:RomanMythCharacter  .    
+  
+rim:Vesta rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Vesta"@en ;
+  skos:prefLabel "Vesta"@fr ;
+  skos:exactMatch wd:Q178710 ;
+  p:hasGender :female ;
+  skos:definition "goddess of the hearth, home, and family in Roman religion";
+  skos:inScheme sch:RomanMythCharacter  .    
+
+rim:Ceres rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Ceres"@en ;
+  skos:prefLabel "Céres"@fr ;
+  skos:exactMatch wd:Q32102;
+  p:hasGender :female ;
+  skos:definition "Roman goddess of agriculture";
+  skos:inScheme sch:RomanMythCharacter  . 
+  
+rim:Diana rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Diana"@en ;
+  skos:prefLabel "Diane"@fr ;
+  skos:exactMatch wd:Q132543;
+  p:hasGender :female ;
+  skos:definition "goddess of the hunt, the moon and birthing, equated with the Greek goddess Artemis";
+  skos:inScheme sch:RomanMythCharacter  .  
+  
+rim:Terra rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Terra"@en ;
+  skos:prefLabel "Tellus"@fr ;
+  skos:exactMatch wd:Q270867;
+  p:hasGender :female ;
+  p:nativeTerm "Terra, Tellus";
+  skos:definition "personification of the Earth in ancient Roman religion and mythology";
+  skos:inScheme sch:RomanMythCharacter  . 
+  
+rim:Ops rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Ops"@en ;
+  skos:prefLabel "Ops"@fr ;
+  skos:exactMatch wd:Q859392;
+  p:hasGender :female ;
+  skos:definition "Roman goddess of earth and fertility";
+  skos:inScheme sch:RomanMythCharacter  .   
+  
+rim:Proserpina rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Proserpina"@en ;
+  skos:prefLabel "Proserpine"@fr ;
+  skos:exactMatch wd:Q14515330;
+  p:hasGender :female ;
+  p:hasFather rim:Jupiter ;
+  p:hasMother rim:Ceres ;
+  p:isSpouseOf rim:Pluto ;
+  skos:definition "Roman goddess";
+  skos:inScheme sch:RomanMythCharacter  . 
+  
+rim:Flora rdf:type owl:NamedIndividual , :RomanGod ,skos:Concept;
+  skos:prefLabel "Flora"@en ;
+  skos:prefLabel "Flore"@fr ;
+  skos:exactMatch wd:Q209644;
+  p:hasGender :female ;
+  skos:definition " Roman goddess of flowers, spring and prosperity";
+  skos:inScheme sch:RomanMythCharacter  .
+  

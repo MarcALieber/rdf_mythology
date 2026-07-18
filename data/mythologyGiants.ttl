@@ -1,0 +1,46 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix mo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+
+gim:Polyphemus rdf:type owl:NamedIndividual,:Cyclops, skos:Concept;
+  skos:prefLabel "Polyphemus"@en ;
+  skos:prefLabel "Polyphème"@fr ;
+  skos:exactMatch wd:Q193567;
+  p:hasFather gim:Poseidon ;
+  p:hasMother gim:Thoosa ;
+  p:hasGender :male ;
+  skos:definition "giant son of Poseidon and Thoosa in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Thoosa rdf:type owl:NamedIndividual,:Nymph, :NatureDeities, skos:Concept;
+  skos:prefLabel "Thoosa"@en ;
+  skos:prefLabel "Thoosa"@fr ;
+  skos:exactMatch wd:Q843514;
+  p:hasGender :female ;
+  skos:definition "water deity"@en ;
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Typhon  rdf:type owl:NamedIndividual,:Giants, skos:Concept;
+  skos:prefLabel "Typhon"@en ;
+  skos:prefLabel "Typhon"@fr ;
+  skos:altLabel "Typhoeus	"@en ;
+  skos:exactMatch wd:Q180237;
+  p:hasFather gim:Tartarus ;
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:definition "was a monstrous storm-giant who laid siege to heaven but was defeated by Zeus and imprisoned in the pit of Tartaros"@en ;
+  skos:inScheme sch:GreekMythCharacter .
+

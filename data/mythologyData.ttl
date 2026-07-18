@@ -1,0 +1,99 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.semanticweb.org/mythologie/geography/> .
+
+gim:Maia rdf:type owl:NamedIndividual,:Pleiad,skos:Concept;
+skos:prefLabel "Maia"@en,"Maïa"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q205233 ;
+  skos:definition "Pleiad and mother of Hermes" ;
+  skos:inScheme sch:GreekMythCharacter  .
+  
+gim:Metis rdf:type owl:NamedIndividual,:Oceanid,skos:Concept;
+skos:prefLabel "Metis"@en,"Métis"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q190565 ;
+  skos:definition "Oceanid of Greek mythology" ;
+  skos:inScheme sch:GreekMythCharacter  .
+  
+gim:Dione rdf:type owl:NamedIndividual,:OtherDeities,skos:Concept;
+skos:prefLabel "Dione"@en,"Dioné"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q199923 ;
+  skos:definition "Greek goddess, mother of Aphrodite" ;
+  skos:inScheme sch:GreekMythCharacter  .
+  
+gim:Pan a skos:Concept, owl:NamedIndividual, :Satyrs, :NatureDeities;
+    skos:prefLabel "Pan"@en,"Pan"@fr ;
+    skos:definition "Greek god of the mountain wilds, shepherds, flocks, rustic music, fertility, spring, and theatrical criticism, with the hindquarters, legs, and horns of a goat";
+    p:hasGender :male ;
+    p:hasFather gim:Hermes ;  
+    skos:exactMatch wd:Q132582 ;
+    skos:inScheme sch:GreekMythCharacter  .
+
+gim:Hermaphroditus a skos:Concept, owl:NamedIndividual, :OtherDeities;
+    skos:prefLabel "Pan"@en,"Pan"@fr ;
+    skos:definition "son of Aphrodite and Hermes in Greek mythology";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :male ;
+    p:hasFather gim:Hermes ;  
+    p:hasMother gim:Aphrodite ;
+    skos:exactMatch wd:Q204146 .
+    
+gim:Priapus a skos:Concept, owl:NamedIndividual, :AgriculturalDeities, :FertilityDeities ;
+    skos:prefLabel "Priapus"@en,"Priape"@fr ;
+    skos:definition "The god of Fertility, of vegetable gardens. He was also a protector of beehives, flocks and vineyards.";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :male ;
+    p:hasFather gim:Dionysos ;  
+    p:hasMother gim:Aphrodite ;
+    skos:exactMatch wd:Q206878 .
+    
+gim:Tyche a skos:Concept, owl:NamedIndividual, :Oceanid ;
+    skos:prefLabel "Tyche"@en,"Tyché"@fr ;
+    skos:definition "Greek goddess of fortune";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :male ;
+    p:hasFather gim:Oceanus ;  
+    p:hasMother gim:Tethys ;
+    skos:exactMatch wd:Q213440 .
+
+gim:Silenus a skos:Concept, :Satyrs, owl:NamedIndividual ;
+    skos:prefLabel "Silenus"@en,"Sylène"@fr ;
+    skos:definition "figure in Greek mythology; tutor to Dionysus";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :male ;
+    p:hasFather gim:Hermes ;  
+    p:hasMother gim:Gaea ;
+    skos:exactMatch wd:Q464091 .
+    
+gim:Daphnis a skos:Concept,owl:NamedIndividual, :OtherDeities ;
+    skos:prefLabel "Daphnis"@en,"Daphnis"@fr ;
+    skos:definition "mythological Greek character, son of Hermes, inventor of Bucolics";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :male ;
+    p:hasFather gim:Hermes ;  
+    skos:exactMatch wd:Q741627 .
+    
+gim:Io a skos:Concept,owl:NamedIndividual, :Nymph ;
+    skos:prefLabel "Io"@en,"Io"@fr ;
+    skos:definition "nymph seduced by Zeus in Greek mythology";
+    skos:inScheme sch:GreekMythCharacter ;
+    p:hasGender :female ;
+    p:unmarriedPartner gim:Zeus ;
+    p:hasFather gim:Hermes ;  
+    skos:exactMatch wd:Q179014 .    
+    
+                                                                                                                             

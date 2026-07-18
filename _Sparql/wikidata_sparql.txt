@@ -1,0 +1,65 @@
+-- wikidata
+SELECT ?item ?itemLabel 
+WHERE 
+{
+  ?item wdt:P31 wd:Q34201.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+
+
+--Zeus frere ou soeur
+SELECT ?o ?oLabel 
+WHERE { wd:Q34201 wdt:P3373 ?o. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+      }
+      
+-- the 12 Olympian text in french
+SELECT ?o ?oLabel 
+WHERE { wd:Q101609 wdt:P527 ?o. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+      } 
+      
+-- the 12 Olympian text in english
+SELECT ?o ?oLabel 
+WHERE { wd:Q101609 wdt:P527 ?o. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en". }
+      }
+      
+#Children Hermes https://www.wikidata.org/wiki/Q41484
+SELECT ?o ?oLabel 
+WHERE { wd:Q41484 wdt:P40 ?o. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en". } .
+      }
+      
+ 
+# ?child  father   Zeus
+SELECT ?child ?childLabel WHERE {
+  ?child wdt:P22 wd:Q34201.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+}
+      
+-- all deities
+SELECT ?o ?oLabel
+WHERE { ?o wdt:P31 wd:Q22989102. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en". } .
+      }
+
+
+https://www.wikidata.org/wiki/Q34201
+
+
+select *
+where {wd:Q34201 ?p ?o}
+
+select distinct ?dd
+where {wd:Q34201 wdt:P40 ?o .
+       ?o ?p ?o2 .
+       ?p rdf:type ?dd .
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+       }
+       
+SELECT ?o (concat("<",str(?o),"> p:hasChild gim:" ) as ?res) ?oLabel
+WHERE { wd:Q41484 wdt:P40 ?o. 
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "en,en". } .
+      }
+             

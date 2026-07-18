@@ -1,0 +1,44 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix sy: <http://www.semanticweb.org/mythologies/symbol/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+	
+sy:Gorgoneion
+  rdf:type owl:NamedIndividual, :Symbol, skos:Concept;
+  skos:prefLabel "Gorgoneion"@en ;
+  skos:prefLabel "Gorgoneion"@fr ;
+  skos:definition "the head of the gorgon" .
+
+sy:Bow
+  rdf:type owl:NamedIndividual, :Symbol, skos:Concept;
+  skos:prefLabel "Bow"@en ;
+  skos:prefLabel "Arc"@fr ;
+  skos:definition "un arc" .
+
+sy:Aegis
+  rdf:type owl:NamedIndividual, :Symbol, skos:Concept;
+  skos:prefLabel "Aegis"@en ;
+  skos:prefLabel "égide"@fr ;
+  skos:exactMatch wd:Q190662;
+  skos:definition "device carried by Athena and Zeus, variously interpreted as an animal skin or a shield and sometimes featuring the head of a Gorgon" .
+    
+sy:Lyre
+  rdf:type owl:NamedIndividual, :Symbol, skos:Concept;
+  skos:prefLabel "Lyre"@en ;
+  skos:prefLabel "Lyre"@fr ;
+  skos:exactMatch wd:Q201129;
+  skos:definition "string instrument from Greek classical antiquity" .  
+
+  
+

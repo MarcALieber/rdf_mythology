@@ -1,0 +1,35 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix au: <http://www.semanticweb.org/mythologies/author/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+# <http://www.semanticweb.org/mythologie/author/Homer>	
+au:Homer 
+  rdf:type owl:NamedIndividual, :Author, skos:Concept;
+  skos:prefLabel "Homer"@en ;
+  skos:prefLabel "Homère"@fr ;
+  skos:exactMatch wd:Q6691;
+  p:hasGender :male ;
+  skos:definition "reputed author of the Iliad and the Odyssey" .
+  
+au:Euripide
+  rdf:type owl:NamedIndividual, :Author, :tragedian, skos:Concept;
+  skos:prefLabel "Euripide"@en ;
+  skos:prefLabel "Euripide"@fr ;
+  skos:exactMatch wd:Q48305;
+  p:nativeTerm "Εὐριπίδης";
+  p:hasGender :male ;
+  skos:definition "Classical Athenian playwright" .
+  
+

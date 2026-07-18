@@ -1,0 +1,459 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix mo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix an: <http://www.semanticweb.org/mythologies/animal/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+mo:Semele rdf:type owl:NamedIndividual , :NotableWoman, skos:Concept;
+  skos:prefLabel "Semele"@en ;
+  skos:prefLabel "Sémélé"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q776139 .
+
+mo:Heracles rdf:type owl:NamedIndividual, :semiGod, :Heroe, skos:Concept, :DeifiedMortal;
+  skos:prefLabel "Heracles"@en ;
+  skos:prefLabel "Hercule"@fr ;
+  skos:altLabel "Héraclès"@fr ;
+  skos:exactMatch wd:Q122248;
+  p:hasFather gim:Zeus ;
+  p:hasFosterFather mo:Amphitryon ;  
+  p:hasMother mo:Alkmene ;
+  p:nativeTerm "Ἡρακλῆς"; 
+  p:hasGender :male ;
+  skos:definition "The greatest of the Greek heroes who was famed the Twelve Labours imposed upon him by King Eurystheus. Upon his death he ascended to join the ranks of the gods on Olympus becoming a divine-protector of mankind."@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Argonauts, sch:LegendsOfHerakles .
+
+mo:Amphitryon  a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendsOfHerakles ;
+  skos:prefLabel "Amphitryon"@en, "Amphitryon"@fr ;
+  p:hasGender :male ;
+  skos:definition "figure in Greek mythology, husband of Alcmene";
+  skos:exactMatch wd:Q206214 .
+
+mo:Alkmene a owl:NamedIndividual,skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter ,sch:LegendsOfHerakles ;
+  p:hasGender :female ;
+  skos:prefLabel "Alkmene"@en, "Alcmène"@fr ;
+  skos:definition "mother of Heracles";
+  p:isSpouseOf mo:Amphitryon ;
+  skos:exactMatch wd:Q190543 ;
+  p:unmarriedPartner gim:Zeus .
+
+mo:Deianira a owl:NamedIndividual,skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter ,sch:LegendsOfHerakles ;
+  p:hasGender :female ;
+  skos:prefLabel "Deianira"@en, "Déjanire"@fr ;
+  skos:definition "wife of Heracles in Greek mythology";
+  p:isSpouseOf mo:Heracles ;
+  skos:exactMatch wd:Q272000 .
+
+mo:Achilles a owl:NamedIndividual, skos:Concept, :Heroe, :Warrior ;
+  skos:definition "was a hero of the Trojan War, the greatest of all the Greek warriors"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  skos:prefLabel "Achilles"@en, "Achille"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q41746 ;
+  p:hasFather mo:Peleus ;
+  p:hasMother gim:Thetis .
+
+mo:Odysseus a owl:NamedIndividual, skos:Concept, :Heroe, :Warrior ;
+  skos:definition "was a hero of the Trojan War, legendary Greek king of Ithaca"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Odyssey ;
+  skos:prefLabel "Odysseus"@en, "Ulysse"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q47231 ;
+  p:hasFather mo:Laertes ;
+  p:hasMother mo:Anticlea .
+  
+mo:Laertes a owl:NamedIndividual, skos:Concept, :King ;
+  skos:definition "legendary king of Ithaca"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Odyssey ;
+  skos:prefLabel "Laertes"@en, "Laërte"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q748296 .
+
+mo:Anticlea a owl:NamedIndividual, skos:Concept;
+  skos:definition "mother of Odysseus"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Odyssey ;
+  skos:prefLabel "Anticlea"@en, "Anticlée"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:Laertes ;
+  skos:exactMatch wd:Q576170 .
+
+mo:Penelope a owl:NamedIndividual, skos:Concept, :NotableWoman;
+  skos:definition "wife of Odysseus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Odyssey ;
+  skos:prefLabel "Penelope"@en, "Pénélope"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:Odysseus ;
+  skos:exactMatch wd:Q165769 .
+  
+mo:Telemachus a owl:NamedIndividual, skos:Concept;
+  skos:definition "mythological son of Odysseus and Penelope"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Odyssey ;
+  skos:prefLabel "Telemachus"@en, "Télémaque"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q192482 ;
+  p:hasFather mo:Odysseus ;
+  p:hasMother mo:Penelope .
+
+mo:Briseis a owl:NamedIndividual, skos:Concept,:NotableWoman ;
+  skos:definition "daughter of Briseus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  skos:prefLabel "Briseis"@en, "Briséis"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q244318 ;
+  p:unmarriedPartner mo:Achilles .
+
+mo:Peleus a owl:NamedIndividual, skos:Concept, :Heroe ;
+  skos:inScheme sch:GreekMythCharacter ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q178641 ;
+  skos:prefLabel "Peleus"@en, "Pélée"@fr .
+
+mo:Theseus  a owl:NamedIndividual, skos:Concept, :Heroe, :King ;
+  skos:inScheme sch:GreekMythCharacter ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q1320718 ;
+  skos:prefLabel "Theseus"@en, "Thésée"@fr .
+
+mo:Hector a owl:NamedIndividual, skos:Concept, :Heroe, :Warrior ;
+  skos:definition "prince of Troy in Greek mythology";
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q159666 ;
+  skos:prefLabel "Hector"@en, "Hector"@fr;
+  p:killedBy mo:Achilles ;
+  p:hasFather mo:Priam ;
+  p:hasMother mo:Hecuba .
+
+mo:Paris a owl:NamedIndividual, skos:Concept, :Heroe, :Warrior ;
+  skos:definition "mythological son of Priam, king of Troy,see also Judgement of Paris";
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q167646 ;
+  skos:prefLabel "Paris"@en, "Pâris"@fr;
+  skos:altLabel "Alexander"@en, "Alexandre"@fr;
+  p:killedBy mo:Philoctetes ;
+  p:hasFather mo:Priam ;
+  p:hasMother mo:Hecuba .
+
+mo:Priam a owl:NamedIndividual, skos:Concept, :King;
+  skos:definition "mythological king of Troy";
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q170473 ;
+  skos:prefLabel "Priam"@en, "Priam"@fr;
+  p:hasFather mo:Laomedon ;
+  p:hasMother mo:Leucippe .
+
+mo:Hecuba a owl:NamedIndividual, skos:Concept, :NotableWoman;
+  skos:definition "spouse of king Priam";
+  skos:inScheme sch:GreekMythCharacter , sch:LegendOfTroy ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q193433 ;
+  p:isSpouseOf mo:Priam ;
+  skos:prefLabel "Hecuba"@en, "Hécube"@fr .
+
+mo:Agamemnon a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter, :Warrior;
+  skos:definition "son of Atreus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Agamemnon"@en, "Agamemnon"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q128176 ;
+  p:hasFather mo:Atreus ;
+  p:hasMother mo:Aerope .
+  
+mo:Clytemnestra a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter,:NotableWoman ;
+  skos:definition "daughter of Tyndareus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Clytemnestra"@en, "Clytemnestre"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q131157 ;
+  p:isSpouseOf mo:Agamemnon ;
+  p:hasFather mo:Tyndareus ;
+  p:hasMother mo:Leda ;
+  p:unmarriedPartner mo:Aegisthus . 
+  
+mo:Iphigenia a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter,:NotableWoman ;
+  skos:definition "daughter of Agamemnon in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Iphigenia"@en, "Iphigénie"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q192673 ;
+  p:hasFather mo:Agamemnon ;
+  p:hasMother mo:Clytemnestra .
+
+mo:Orestes a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter;
+  skos:definition "son of Agamemnon in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Orestes"@en, "Oreste"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q192407 ;
+  p:hasFather mo:Agamemnon ;
+  p:hasMother mo:Clytemnestra .
+
+mo:Pylades a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter;
+  skos:definition "mythical friend of Orestes"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Pylades"@en, "Pylade"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q494886 .
+    
+mo:Elektra a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter,:NotableWoman ;
+  skos:definition "daughter of Agamemnon in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Elektra"@en, "Electre"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q131651 ;
+  p:isSpouseOf mo:Pylades ;
+  p:hasFather mo:Agamemnon ;
+  p:hasMother mo:Clytemnestra .
+
+mo:Menelaus a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter, :Warrior;
+  skos:definition "mythical king of Sparta, husband of Helen of Troy"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy, sch:Atreides ;
+  skos:prefLabel "Menelaus"@en, "Ménélas"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q171839 ;
+  p:hasFather mo:Atreus ;
+  p:hasMother mo:Aerope .
+  
+mo:Sarpedon a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter, :Warrior;
+  skos:definition "Greek mythology character, son of Zeus and Europa"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:LegendOfTroy ;
+  skos:prefLabel "Sarpedon"@en, "Sarpédon"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q917719 ;
+  p:hasFather gim:Zeus ;
+  p:hasMother mo:Europa .
+
+mo:Europa a owl:NamedIndividual, skos:Concept, :NotableWoman ,:mythologicalGreekCharacter;
+  skos:definition "Phoenician character in Greek mythology, daughter of Agenor"@en ;
+  skos:inScheme sch:GreekMythCharacter;
+  skos:prefLabel "Europa"@en, "Europe"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q165170 ;
+  p:unmarriedPartner gim:Zeus . 
+
+mo:Helen a owl:NamedIndividual, skos:Concept, :NotableWoman ,:mythologicalGreekCharacter;
+  skos:definition "daughter of Zeus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter , sch:LegendOfTroy;
+  skos:prefLabel "Helen of Troy"@en, "Hélène"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:Menelaus ;
+  skos:exactMatch wd:Q164061 ;
+  p:hasFather gim:Zeus ;
+  p:hasMother mo:Leda ;
+  p:unmarriedPartner mo:Paris .
+
+mo:Leda a owl:NamedIndividual, skos:Concept, :NotableWoman ,:mythologicalGreekCharacter;
+  skos:definition "daughter of Thestius in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Leda"@en, "Léda"@fr ;
+  p:hasGender :female ;
+  p:unmarriedPartner gim:Zeus ;
+  skos:exactMatch wd:Q182019 .
+   
+mo:Ariadne a owl:NamedIndividual, skos:Concept, :NotableWoman ,:mythologicalGreekCharacter;
+  skos:definition "the daughter of Minos in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Ariadne"@en, "Ariane"@fr ;
+  p:hasGender :female ;
+  p:hasFather mo:Minos ;
+  p:hasMother mo:Pasiphaë ;
+  p:unmarriedPartner gim:Dionysos ;
+  skos:exactMatch wd:Q184874 .
+
+mo:Atreus a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter;
+  skos:definition "king of Mycenae, father of Agamemnon"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Atreides ;
+  skos:prefLabel "Atreus"@en, "Atrée"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q192469 ;
+  p:hasFather mo:Pelops ;
+  p:hasMother mo:Hippodamia .
+  
+mo:Thyestes a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter;
+  skos:definition "King of Mycenae and brother of Atreus in Greek mythologie"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Atreides ;
+  skos:prefLabel "Thyestes"@en, "Thyeste"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q622504 ;
+  p:hasFather mo:Pelops ;
+  p:hasMother mo:Hippodamia .
+
+mo:Aegisthus a owl:NamedIndividual, skos:Concept, :mythologicalGreekCharacter;
+  skos:definition "son of Thyestes in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Atreides ;
+  skos:prefLabel "Aegisthus"@en, "Égisthe"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q212091 ;
+  p:hasFather mo:Thyestes ;
+  p:hasMother mo:Pelopeia .
+  
+mo:Pelops a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter;
+  skos:definition "son of Tantalus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Atreides ;
+  skos:prefLabel "Pelops"@en, "Pélops"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q192485 ;
+  p:hasFather mo:Tantalus ;
+  p:hasMother mo:Klytia .
+  
+mo:Tantalus a owl:NamedIndividual, skos:Concept, :King, :mythologicalGreekCharacter;
+  skos:definition "son of Zeus in Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter, sch:Atreides ;
+  skos:prefLabel "Tantalus"@en, "Tantale"@fr ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q182101 ;
+  p:hasFather gim:Zeus ;
+  p:hasMother gim:Plouto .
+
+gim:Plouto a owl:NamedIndividual, skos:Concept, :Oceanid, :mythologicalGreekCharacter;
+  skos:definition "Oceanid of Greek mythology"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Plouto"@en, "Plouto"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q662968  ;
+  p:hasFather gim:Oceanus ;
+  p:hasMother gim:Tethys .
+
+mo:Hippodamia a owl:NamedIndividual, skos:Concept,:mythologicalGreekCharacter;
+  skos:definition "Greek mythical character, daughter of Oenomaus and wife of Pelops"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Hippodamia"@en, "Hippodamie"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q328354 .
+
+mo:Jason a owl:NamedIndividual, skos:Concept, :Heroe, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:Argonauts ;
+  skos:prefLabel "Jason"@en, "Jason"@fr ;
+  p:hasGender :male ;
+  skos:definition "Greek mythological hero, son of Aeson, quest for the Golden Fleece";
+  skos:exactMatch wd:Q176758 .
+  
+mo:Medea a owl:NamedIndividual, skos:Concept,:NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter, sch:Argonauts ;
+  skos:prefLabel "Medea"@en, "Médée"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:Jason ;
+  skos:definition "Daughter of King Aeëtes of Colchis in Greek mythology";
+  skos:exactMatch wd:Q174278 .
+  
+mo:Oedipus a owl:NamedIndividual, skos:Concept, :Heroe, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Oedipus"@en, "Oedipe"@fr ;
+  p:hasGender :male ;
+  p:hasFather mo:Laius ;
+  p:hasMother mo:Jocasta ;
+  skos:definition "mythical Greek king of Thebes";
+  skos:exactMatch wd:Q130890 .
+
+mo:Jocasta a owl:NamedIndividual, skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Jocasta"@en, "Jocaste"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:laius ;
+  p:isSpouseOf mo:Oedipus ;
+  p:hasFather mo:Menoeceus ;
+  skos:definition "mythological queen of Thebes";
+  skos:exactMatch wd:Q131445 .
+
+mo:Antigone a owl:NamedIndividual, skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Antigone"@en, "Antigone"@fr ;
+  p:hasGender :female ;
+  p:hasFather mo:Oedipus ;
+  p:hasMother mo:Jocasta ;
+  skos:definition "mythical daughter of Oedipus and Jocasta";
+  skos:exactMatch wd:Q131351 .
+
+mo:Ismene a owl:NamedIndividual, skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Ismene"@en, "Ismène"@fr ;
+  p:hasGender :female ;
+  p:hasFather mo:Oedipus ;
+  p:hasMother mo:Jocasta ;
+  skos:definition "mythical daughter of Oedipus and Jocasta";
+  skos:exactMatch wd:Q753902 .
+
+mo:Eteocles a owl:NamedIndividual, skos:Concept, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Eteocles"@en, "Eteocle"@fr ;
+  p:hasGender :male ;
+  p:hasFather mo:Oedipus ;
+  p:hasMother mo:Jocasta ;
+  skos:definition "mythological king of Thebes";
+  skos:exactMatch wd:Q506550 .
+
+mo:Polynices a owl:NamedIndividual, skos:Concept ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Polynices"@en, "Polynice"@fr ;
+  p:hasGender :male ;
+  p:hasFather mo:Oedipus ;
+  p:hasMother mo:Jocasta ;
+  skos:definition "mythological prince of Thebes";
+  skos:exactMatch wd:Q334817 .
+
+mo:Creon a owl:NamedIndividual, skos:Concept, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Creon"@en, "Créon"@fr ;
+  p:hasGender :male ;
+  p:hasFather mo:Menoeceus ;
+  skos:definition "king of Thebes in Greek mythology";
+  skos:exactMatch wd:Q732066 .
+
+mo:Menoeceus a owl:NamedIndividual, skos:Concept ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Menoeceus"@en, "Ménécée"@fr ;
+  p:hasGender :male ;
+  p:hasFather mo:Menoeceus ;
+  skos:definition "mythical character, father of Creon";
+  skos:exactMatch wd:Q1178176 .
+  
+mo:Laius a owl:NamedIndividual, skos:Concept, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfThebes;
+  skos:prefLabel "Laius"@en, "Laïos"@fr ;
+  p:hasGender :male ;
+  skos:definition "mythological king of Thebes, father of Oedipus";
+  skos:exactMatch wd:Q463898 .
+
+mo:Minos a owl:NamedIndividual, skos:Concept, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfCrete;
+  skos:prefLabel "Minos"@en, "Minos"@fr ;
+  p:hasGender :male ;
+  p:hasFather gim:Zeus ;
+  p:hasMother mo:Europa ;
+  skos:definition "Greek mythology character, son of Zeus and Europa, king of Crete";
+  skos:exactMatch wd:Q23168 .
+  
+mo:Rhadamanthus a owl:NamedIndividual, skos:Concept, :King ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfCrete;
+  skos:prefLabel "Rhadamanthus"@en, "Rhadamanthe"@fr ;
+  p:hasGender :male ;
+  p:hasFather gim:Zeus ;
+  p:hasMother mo:Europa ;
+  skos:definition "Greek mythology character, son of Zeus and Europa";
+  skos:exactMatch wd:Q193609 .
+  
+mo:Pasiphaë a owl:NamedIndividual, skos:Concept, :NotableWoman ;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfCrete;
+  skos:prefLabel "Pasiphaë"@en, "Pasiphaé"@fr ;
+  p:hasGender :female ;
+  p:isSpouseOf mo:Minos ;
+  p:hasFather gim:Helios ;
+  p:hasMother mo:Perse ;
+  p:unmarriedPartner an:Bull ;
+  skos:definition "daughter of Perse and Helios, the Sun in Greek mythology, queen of Crete";
+  skos:exactMatch wd:Q203236 .
+
+  

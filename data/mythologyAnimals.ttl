@@ -1,0 +1,93 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix an: <http://www.semanticweb.org/mythologies/animal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+an:Bull a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Quadriped ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Bull"@en, "Taureau"@fr .
+ 
+an:Eagle a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Bird ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Eagle"@en, "Aigle"@fr .
+
+an:Swan a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Bird ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Swan"@en, "Cigne"@fr .  
+
+an:Raven a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Bird ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Raven"@en, "Corbeau"@fr .  
+  
+an:Owl a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Bird ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Owl"@en, "Hibou"@fr .
+  
+an:Medusa a owl:NamedIndividual ,skos:Concept, :MythicAnimals, :Gorgons ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Medusa"@en, "Méduse"@fr ;
+  skos:exactMatch wd:Q160730;
+  p:hasGender :female ;
+  skos:definition "in Greek mythology, one of the three Gorgons, described as a woman with snakes in place of hair, beheaded by Perseus".
+
+an:Chiron a owl:NamedIndividual ,skos:Concept, :Centaur ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Chiron"@en, "Chiron"@fr ;
+  skos:exactMatch wd:Q183417;
+  p:hasGender :male ;
+  skos:definition "mythological creature of a combination of a man and a horse".
+
+an:Nessus a owl:NamedIndividual ,skos:Concept, :Centaur ;
+  skos:inScheme sch:GreekMythCharacter ,sch:LegendsOfHerakles ;
+  skos:prefLabel "Nessus"@en, "Nessos"@fr ;
+  skos:exactMatch wd:Q466866;
+  skos:definition "Centaur killed by Herakles"@en ;
+  p:isRelatedTo gmo:Deianira;
+  p:KilledBy gmo:Herakles ;
+  p:hasGender :male ;
+  
+  skos:definition "mythological creature of a combination of a man and a horse".
+an:Pegasus a owl:NamedIndividual ,skos:Concept, :MythicAnimals;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Pegasus"@en, "Pegase"@fr ;
+  skos:exactMatch wd:Q162797;
+  p:hasFather gim:Poseidon ;
+  p:hasMother an:Medusa ;
+  p:hasGender :male ;
+  skos:definition "Winged horse in Greek mythology".  
+  
+an:Minautor a owl:NamedIndividual ,skos:Concept, :Quadriped;
+  skos:inScheme sch:GreekMythCharacter, sch:mythologyOfCrete;
+  skos:prefLabel "Minotaur"@en, "Minautore"@fr ;
+  skos:exactMatch wd:Q129866;
+  p:hasFather an:Bull ;
+  p:hasMother gmo:Pasiphaë ;
+  p:hasGender :male ;
+  skos:definition "creature of Greek mythology".
+
+an:Scylla a owl:NamedIndividual ,skos:Concept, :Monster, :Nymph;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Scylla"@en, "Scylla"@fr ;
+  skos:exactMatch wd:Q193115;
+  p:hasGender :female ;
+  skos:definition "nymph transformed into a sea monster by Circe in Greek mythology".
+  
+an:Charybdis a owl:NamedIndividual ,skos:Concept, :Monster, :Nymph;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Charybdis"@en, "Charybde"@fr ;
+  skos:exactMatch wd:Q192082;
+  p:hasGender :female ;
+  skos:definition "figure in Greek mythology transformed in a sea monster by Zeus".
+  
+
+ 

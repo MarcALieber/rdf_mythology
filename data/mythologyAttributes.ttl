@@ -1,0 +1,48 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix att: <http://www.semanticweb.org/mythologies/attribute/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+	
+att:Music
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Music"@en ;
+  skos:prefLabel "Musique"@fr .
+
+att:Archery
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Archery"@en ;
+  skos:prefLabel "Archerie"@fr .
+
+att:Healing
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Healing"@en ;
+  skos:prefLabel "Guérison"@fr .
+
+att:Prophecy
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Prophecy"@en ;
+  skos:prefLabel "Prophécie"@fr .
+
+att:Wisdom
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Wisdom"@en ;
+  skos:prefLabel "Savoir"@fr .
+
+att:Weaving
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Weaving"@en ;
+  skos:prefLabel "Tissage"@fr .
+
+att:Crafts
+  rdf:type owl:NamedIndividual, :Attribute, skos:Concept;
+  skos:prefLabel "Crafts"@en ;
+  skos:prefLabel "Artisanat"@fr .
+

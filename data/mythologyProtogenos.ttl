@@ -1,0 +1,52 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix an: <http://www.semanticweb.org/mythologies/animal/> .
+@prefix pl: <http://www.semanticweb.org/mythologies/plant/> .
+@prefix sy: <http://www.semanticweb.org/mythologies/symbol/> .
+@prefix att: <http://www.semanticweb.org/mythologies/attribute/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+gim:Uranus a skos:Concept,owl:NamedIndividual, :protogenos, :SkyDeities ;
+  skos:definition "OURANOS (Uranus) was the primordial god (protogenos) of the sky. The Greeks imagined the sky as a solid dome of brass, decorated with stars, whose edges descended to rest upon the outermost limits of the flat earth. Ouranos was the literal sky, just as his consort Gaia (Gaea) was the earth";
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Uranus"@en, "Ouranos"@fr ;
+  p:nativeTerm "Ουρανος";
+  p:hasGender :male ;
+  p:hasMother gim:Gaea ;
+  p:hasRomanCounterpart rim:Caelus ;
+  skos:exactMatch wd:Q79999;
+  p:hasTheoiSource "https://www.theoi.com/Protogenos/Ouranos.html";
+  p:livesIn geo:Sky .
+
+gim:Gaea a skos:Concept,owl:NamedIndividual, :protogenos ;
+  skos:definition "GAIA (Gaea) was the goddess of the earth. She was one of the primoridal elemental deities (protogenos) born at the dawn of creation. Gaia was the great mother of all creation--the heavenly gods were descended from her through her union with Ouranos (Uranus) (Sky), the sea-gods from her union with Pontos (Sea), the Gigantes (Giants) from her mating with Tartaros (the Pit), and mortal creatures born directly from her earthy flesh" ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Gaea"@en, "Gaéa"@fr ;
+  skos:altLabel "Gaia"@en, "Gaia"@fr ;
+  p:nativeTerm "Γαια Γαιη Γη";
+  p:hasGender :female ;
+  p:hasRomanCounterpart rim:Terra ;
+  skos:exactMatch wd:Q93172;
+  p:hasTheoiSource "https://www.theoi.com/Protogenos/Gaia.html";
+  p:livesIn geo:Earth .
+  
+gim:Tartarus a skos:Concept,owl:NamedIndividual, :protogenos ;
+  skos:definition "the primordial god (protogenos) of the stormy pit of Tartaros that lies beneath the foundations of the earth.";
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Tartarus"@en, "Tartare"@fr ;
+  p:hasGender :male ;
+  p:nativeTerm "Ταρταρος";
+  skos:exactMatch wd:Q101322;
+  p:hasTheoiSource "https://www.theoi.com/Protogenos/Tartaros.html" .
+  

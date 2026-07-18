@@ -1,0 +1,207 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+
+gim:Hyperion rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Hyperion"@en ;
+  skos:prefLabel "Hypérion"@fr ;
+  skos:exactMatch wd:Q179209;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:definition "the Titan god of heavenly light";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Iapetos rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Iapetos"@en ;
+  skos:prefLabel "Japet"@fr ;
+  skos:exactMatch wd:Q179543;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:definition "one of the elder Titanes";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Oceanus rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Oceanus"@en ;
+  skos:altLabel "Okeanos"@en ;
+  skos:prefLabel "Océan"@fr ;
+  skos:exactMatch wd:Q161419;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:definition "the primordial Titan god of the great, earth-encircling River Okeanos, font of all of the earth's fresh-water - rivers, wells, springs and rain-clouds";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Themis rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Themis"@en ;
+  skos:prefLabel "Thémis"@fr ;
+  skos:exactMatch wd:Q159168;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:definition "in ancient Greek mythology, a titaness, the personification of divine order, fairness, law, natural law, and custom, whose symbols are the scales of justice";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Coeus rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Coeus"@en ;
+  skos:prefLabel "Coéos"@fr ;
+  skos:altLabel "Koios"@en ;
+  skos:exactMatch wd:Q182837;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  p:nativeTerm "Πολος";
+  skos:definition "one of the elder Titanes (Titans),He and his brothers conspired against their father";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Phoebe rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Phoebe"@en ;
+  skos:altLabel "Phoibe"@en ;
+  skos:prefLabel "Phébé"@fr ;
+  skos:exactMatch wd:Q183281;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :female ;
+  p:nativeTerm "Φοιβη";
+  skos:definition "female Titan in Greek mythology";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Theia rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Theia"@en ;
+  skos:prefLabel "Théia"@fr ;
+  skos:exactMatch wd:Q184232;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :female ;
+  skos:definition "female Titan in Greek mythology";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Tethys rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:prefLabel "Tethys"@en ;
+  skos:prefLabel "Téthys"@fr ;
+  skos:exactMatch wd:Q184216;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :female ;
+  skos:definition "ancient Greek mythological figure";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Rhea rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:definition "RHEIA (Rhea) was the Titanis (Titaness) mother of the gods, and goddess of female fertility, motherhood, and generation. Her name means flow and ease. As the wife of Kronos (Cronus, Time), she represented the eternal flow of time and generations; as the great Mother (Meter Megale), the flow was menstrual blood, birth waters, and milk"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Rhea"@en, "Rhéa"@fr ;
+  skos:exactMatch wd:Q108419;
+  p:hasFather gim:Uranus ;
+  p:hasMother gim:Gaea ;
+  p:hasGender :female ;
+  p:hasRomanCounterpart rim:Ops ;
+  p:livesIn geo:Tartarus, geo:Elysium .
+
+gim:Mnemosyne rdf:type owl:NamedIndividual,:Uranids, skos:Concept;
+  skos:definition "the Titan goddess of memory and remembrance and the inventress of language and words"@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Mnemosyne"@en, "Mnémosyne"@fr ;
+  skos:exactMatch wd:Q102884;
+  p:hasFather gim:Uranus ;
+  p:hasMother gim:Gaea ;
+  p:nativeTerm "Μνημοσυνη";
+  p:hasGender :female .
+  
+gim:Cronus rdf:type owl:NamedIndividual,:Uranids, :PersonifiedConcepts, skos:Concept;
+  skos:prefLabel "Cronus"@en ;
+  skos:prefLabel "Cronos"@fr ;
+  skos:altLabel "Kronos"@en ;
+  skos:exactMatch wd:Q44204;
+  p:hasFather gim:Uranus ;  
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  p:nativeTerm "Κρονος";
+  p:hasRomanCounterpart rim:Saturn ;
+  skos:definition "the King of the Titanes and the god of time, in particular time when viewed as a destructive, all-devouring force";
+  p:hasTheoiSource "https://www.theoi.com/Titan/TitanKronos.html" ;
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Kronos a skos:Concept, :protogenos, :PersonifiedConcepts ;
+  skos:definition "KRONOS (Cronus) was the King of the Titanes and the god of time, in particular time when viewed as a destructive, all-devouring force."@en ;
+  skos:inScheme sch:GreekMythCharacter ;
+  skos:prefLabel "Chronos"@en, "Chronos"@fr ;
+  skos:altLabel "Kronos"@en,"Cronus"@en ;
+  p:nativeTerm "Χρόνος";
+  p:hasFather gim:Uranus ;
+  p:hasMother gim:Gaea ;
+  p:hasGender :male ;
+  skos:exactMatch wd:Q272918;
+  p:livesIn geo:Tartarus, geo:Elysium .
+  	  
+gim:Prometheus rdf:type owl:NamedIndividual,:Titans, :Iapetionids, skos:Concept;
+  skos:prefLabel "Prometheus"@en ;
+  skos:prefLabel "Prométhée"@fr ;
+  skos:exactMatch wd:Q83160;
+  p:hasFather gim:Iapetos ;  
+  p:hasMother gim:Themis ;
+  p:hasGender :male ;
+  skos:definition "Titan, culture hero, and trickster figure in Greek mythology";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Epimetheus rdf:type owl:NamedIndividual,:Titans, :Iapetionids, skos:Concept;
+  skos:prefLabel "Epimetheus"@en ;
+  skos:prefLabel "Épiméthée"@fr ;
+  skos:exactMatch wd:Q41054;
+  p:hasFather gim:Iapetos ;  
+  p:hasMother gim:Themis ;
+  p:hasGender :male ;
+  skos:definition "the Titan god of afterthought and excuses";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Pandora rdf:type owl:NamedIndividual,:NotableWoman, skos:Concept;
+  skos:prefLabel "Pandora"@en ;
+  skos:prefLabel "Pandore"@fr ;
+  skos:exactMatch wd:Q131346;
+  p:hasTheoiSource "https://www.theoi.com/Heroine/Pandora.html";
+  p:isSpouseOf gim:Epimetheus ;  
+  p:hasGender :female ;
+  skos:definition "PANDORA was the first mortal woman who was formed out of clay by the gods";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Klymene rdf:type owl:NamedIndividual,:Titanides, :Oceanid, skos:Concept;
+  skos:prefLabel "Klymene"@en ;
+  skos:prefLabel "Clyméné"@fr ;
+  skos:exactMatch wd:Q836792;
+  p:hasFather gim:Oceanus ;  
+  p:hasMother gim:Tethys;
+  p:hasGender :female ;
+  skos:definition "one of the elder Okeanides and the Titan goddess of fame and renown";
+  skos:inScheme sch:GreekMythCharacter .
+
+gim:Atlas rdf:type owl:NamedIndividual,:Titans, :Iapetionids, skos:Concept;
+  skos:prefLabel "Atlas"@en ;
+  skos:prefLabel "Atlas"@fr ;
+  skos:exactMatch wd:Q130818;
+  p:hasFather gim:Iapetos ;  
+  p:hasMother gim:Klymene ;
+  p:hasGender :male ;
+  skos:definition "the Titan god who bore the sky aloft. He personified the quality of endurance";
+  skos:inScheme sch:GreekMythCharacter .
+  
+gim:Leto rdf:type owl:NamedIndividual,:Titans,:Titanides ,skos:Concept;
+  skos:prefLabel "Leto"@en,"Léto"@fr ;
+  p:hasGender :female ;
+  skos:exactMatch wd:Q103107 ;
+  p:hasFather gim:Coeus ;  
+  p:hasMother gim:Phoebe;
+  skos:definition "one of the Titanides, a bride of Zeus, and the mother of the twin gods Apollon and Artemis." ;
+  skos:inScheme sch:GreekMythCharacter  .
+

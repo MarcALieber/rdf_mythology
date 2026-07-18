@@ -1,0 +1,44 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix ns0: <http://www.w3.org/2002/12/cal/ical#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix pl: <http://www.semanticweb.org/mythologies/plant/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix te: <http://www.semanticweb.org/mythologies/temple/> .
+
+te:Dodone a skos:Concept, :Temple ;
+  dc11:creator "Marc Lieber"^^xsd:string ;
+  dc:modified "2021-01-03"^^dc:W3CDTF ;
+  ns0:dtstart "2020-12-15T00:00:00Z"^^xsd:dateTime ;
+  skos:definition "Dodona was an ancient oracle located in the region of Epirus in northwestern Greece.The ruins are located in Dramisos, near Tsacharovista (Ewegen)" ;
+  skos:inScheme sch:SacredPlace, sch:Greece, sch:Oracle ;
+  skos:prefLabel "Dodone"@en, "Dodone"@fr ;
+  p:isLocatedIn geo:Epirus ;
+  p:isTempleOf gim:Zeus ;
+  p:sacredPlant pl:OakTree .
+
+te:Delphi 
+  a skos:Concept, :Temple, :sacredPrecinct ;
+  dc11:creator "Marc Lieber"^^xsd:string ;
+  dc:modified "2021-01-03"^^dc:W3CDTF ;
+  ns0:dtstart "2020-12-15T00:00:00Z"^^xsd:dateTime ;
+  skos:definition "in ancient times was a sacred precinct that served as the seat of Pythia"^^xsd:string ;
+  skos:inScheme sch:SacredPlace, sch:Greece, sch:Oracle ;
+  skos:prefLabel "Delphi"@en, "Delphes"@fr ;
+  p:isLocatedIn geo:MountParnassus ;
+  p:isTempleOf gim:Apollo ;
+  p:sacredPlant pl:OliveTree .
+
+te:Olympe a skos:Concept, :Temple;
+  skos:inScheme sch:Greece ;
+  skos:prefLabel "Olympe"@en, "Olympie"@fr ;
+  p:isLocatedIn geo:Greece .
+  
+  

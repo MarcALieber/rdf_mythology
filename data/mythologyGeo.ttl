@@ -1,0 +1,94 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+
+<http://www.semanticweb.org/mythologies/geography/Epirus>
+  a skos:Concept, :Region ;
+  skos:inScheme sch:Greece ;
+  skos:prefLabel "Epirus"@en, "Epire"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/MountParnassus>
+  a skos:Concept, :Region ;
+  skos:inScheme sch:Greece ;
+  skos:prefLabel "Mount Parnassus"@en, "Mont Parnasse"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/Delos>
+  a skos:Concept, :Island ;
+  skos:inScheme sch:Greece, sch:SacredPlace ;
+  skos:prefLabel "Delos"@en, "Délos"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/MountOlympus>
+  a skos:Concept, :Region, :MythologicalPlace ;
+  skos:inScheme sch:Greece, sch:GreekMythology ;
+  skos:prefLabel "Mount Olympus"@en, "Mont Olympe"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/Greece>
+  a skos:Concept, :Region ;
+  skos:inScheme sch:Greece ;
+  skos:prefLabel "Greece"@en, "Grèce"@fr ;
+  p:isLocatedIn geo:Europe .
+
+<http://www.semanticweb.org/mythologies/geography/Europe>
+  a skos:Concept, :Region ;
+  skos:inScheme sch:GeographicWorld ;
+  skos:prefLabel "Europe"@en, "Europe"@fr .
+
+<http://www.semanticweb.org/mythologies/geography/Athene>
+  a skos:Concept, :City ;
+  skos:inScheme sch:Greece ;
+  skos:prefLabel "Athene"@en, "Athène"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/Constantinople>
+  a skos:Concept, :City ;
+  skos:altLabel "Bizance"@en, "Istanbul"@en, "Bizance"@fr, "Istanbul"@fr ;
+  skos:inScheme sch:GreekAsia, sch:RomanEmpire, sch:OttomanEmpire ;
+  skos:prefLabel "Constantinople"@en, "Constantinople"@fr ;
+  p:isLocatedIn geo:Thrace .
+
+<http://www.semanticweb.org/mythologies/geography/Thrace>
+  a skos:Concept, :Region ;
+  skos:inScheme sch:GreekAsia, sch:RomanEmpire, sch:OttomanEmpire ;
+  skos:prefLabel "Thrace"@en, "Thrace"@fr ;
+  p:isLocatedIn geo:Greece .
+
+<http://www.semanticweb.org/mythologies/geography/Hades>
+  a skos:Concept, :MythologicalPlace ;
+  skos:inScheme sch:GreekMythology ;
+  skos:exactMatch wd:Q112572697;
+  skos:definition "location in the Greek underworld";
+  skos:prefLabel "Hades"@en, "Hadès"@fr .
+
+<http://www.semanticweb.org/mythologies/geography/Tartarus>
+  a skos:Concept, :MythologicalPlace ;
+  skos:inScheme sch:GreekMythology ;
+  skos:prefLabel "Tartarus"@en, "Tartare"@fr .
+
+<http://www.semanticweb.org/mythologies/geography/Elysium>
+  a skos:Concept, :MythologicalPlace ;
+  skos:inScheme sch:GreekMythology ;
+  skos:prefLabel "Elysum"@en, "Elysée"@fr .
+
+<http://www.semanticweb.org/mythologies/geography/Sky>
+  a skos:Concept, :MythologicalPlace ;
+  skos:inScheme sch:GreekMythology ;
+  skos:prefLabel "Sky"@en, "les Cieux"@fr .
+
+<http://www.semanticweb.org/mythologies/geography/Earth>
+  a skos:Concept, :MythologicalPlace ;
+  skos:inScheme sch:GreekMythology ;
+  skos:prefLabel "Earth"@en, "la Terre"@fr .
+  

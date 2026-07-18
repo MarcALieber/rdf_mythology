@@ -1,0 +1,26 @@
+Named Graphs
+http://www.w3.org/mythologie/metamodel
+http://www.w3.org/mythologie/data
+
+-- TODO replace data by GreekData, RomanData, EgyptianData, etc ......
+-- http://www.w3.org/mythologie/roman
+
+https://www.easyrdf.org/converter
+JSON-LD to Turtle Terse RDF
+
+-- DELETE ---------------------------------------------------------------------------------
+/Mythologie/update
+http://www.semanticweb.org/mythologies/metamodel
+http://www.semanticweb.org/mythologies/data
+
+DROP GRAPH <http://www.semanticweb.org/mythologies/metamodel> 
+DROP GRAPH <http://www.semanticweb.org/mythologies/data>
+DROP default
+
+-------------------------------------------------------------------
+
+-- UPDATE
+
+-- INSERT
+<http://www.semanticweb.org/mythologies/scheme/GreekMythCharacter>
+<http://www.semanticweb.org/mythologies/scheme/RomanMythCharacter>
