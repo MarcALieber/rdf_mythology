@@ -1,0 +1,1301 @@
+@prefix : <http://www.semanticweb.org/ontologies/mythologies#> .
+@prefix m: <http://www.semanticweb.org/mythologies/class#> .
+@prefix p: <http://www.semanticweb.org/mythologies/property#> .
+@prefix t: <http://www.semanticweb.org/mythologies/temple/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix geo: <http://www.semanticweb.org/mythologies/geography/> .
+@prefix gim: <http://www.semanticweb.org/mythologies/greek/immortal/> .
+@prefix gmo: <http://www.semanticweb.org/mythologies/greek/mortal/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rim: <http://www.semanticweb.org/mythologies/roman/immortal/> .
+@prefix sch: <http://www.semanticweb.org/mythologies/scheme/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix auth: <http://www.semanticweb.org/mythologies/author/> .
+@prefix city: <http://www.semanticweb.org/mythologies/greek/city/> .
+@prefix myth: <http://www.semanticweb.org/mythologies/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix mytha: <http://www.semanticweb.org/mythologies/animal/> .
+@prefix mythp: <http://www.semanticweb.org/mythologies/plant/> .
+@base <http://www.semanticweb.org/ontologies/mythologies#> .
+
+<http://www.semanticweb.org/ontologies/mythologie> rdf:type owl:Ontology ;
+                                                    owl:imports <http://www.w3.org/2004/02/skos/core> ;
+                                                    rdfs:comment "Mythologie grecque et romaine"@fr ;
+                                                    owl:versionInfo 2.01 ;
+                                                    skos:changeNote "23-01-2026 version 2.01 Draft; work in progress" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/mythologies/property#BornIn
+p:BornIn rdf:type owl:ObjectProperty ;
+         rdfs:domain :HumanNonhumanBeing ;
+         rdfs:range :Geography ;
+         skos:prefLabel "Born in"@en ,
+                        "Né en"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/property#becomes
+p:becomes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf p:event .
+
+
+###  http://www.semanticweb.org/mythologies/property#event
+p:event rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasChild
+p:hasChild rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf p:isRelatedTo ;
+           owl:inverseOf p:isChildOf ;
+           rdfs:label "has child" .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasCounterpart
+p:hasCounterpart rdf:type owl:ObjectProperty ;
+                 skos:example "" .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasFather
+p:hasFather rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:hasParent ;
+            owl:inverseOf p:isFatherOf ;
+            rdfs:label "has father" .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasFosterFather
+p:hasFosterFather rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf p:hasParent ;
+                  skos:prefLabel "a pour père adoptif"@fr ,
+                                 "has Foster Father"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasGender
+p:hasGender rdf:type owl:ObjectProperty ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range :Gender .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasGreekCounterpart
+p:hasGreekCounterpart rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf p:hasCounterpart ;
+                      owl:inverseOf p:hasRomanCounterpart ;
+                      skos:example "Cybele (Phrygian religion): the Greeks identified her with their own mother of the gods--the Titaness Rhea." .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasMother
+p:hasMother rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:hasParent ;
+            owl:inverseOf p:isMotherOf ;
+            rdfs:label "has mother" .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasParent
+p:hasParent rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasAncestor ;
+            rdfs:label "has parent" .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasRomanCounterpart
+p:hasRomanCounterpart rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf p:hasCounterpart .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasSourceIdentifier
+p:hasSourceIdentifier rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasSymbol
+p:hasSymbol rdf:type owl:ObjectProperty ;
+            rdfs:domain :Immortel ;
+            rdfs:range :Symbol .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasTemple
+p:hasTemple rdf:type owl:ObjectProperty ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range :Temple .
+
+
+###  http://www.semanticweb.org/mythologies/property#isA
+p:isA rdf:type owl:ObjectProperty ;
+      rdfs:label "is a" .
+
+
+###  http://www.semanticweb.org/mythologies/property#isAlsoCalled
+p:isAlsoCalled rdf:type owl:ObjectProperty ;
+               rdfs:label "is also called" .
+
+
+###  http://www.semanticweb.org/mythologies/property#isBrotherOf
+p:isBrotherOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isSibling .
+
+
+###  http://www.semanticweb.org/mythologies/property#isChildOf
+p:isChildOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.semanticweb.org/mythologies/property#isDaughterOf
+p:isDaughterOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf p:isChildOf .
+
+
+###  http://www.semanticweb.org/mythologies/property#isFatherOf
+p:isFatherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:hasChild .
+
+
+###  http://www.semanticweb.org/mythologies/property#isFriendOf
+p:isFriendOf rdf:type owl:ObjectProperty ,
+                      owl:SymmetricProperty ;
+             rdfs:domain :Mortals ;
+             rdfs:range :Mortals ;
+             rdfs:label "is friend of" .
+
+
+###  http://www.semanticweb.org/mythologies/property#isGodOf
+p:isGodOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Immortel .
+
+
+###  http://www.semanticweb.org/mythologies/property#isGoddessOf
+p:isGoddessOf rdf:type owl:ObjectProperty ;
+              rdfs:domain :Immortel .
+
+
+###  http://www.semanticweb.org/mythologies/property#isHusbandOf
+p:isHusbandOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isPartnerOf ;
+              owl:inverseOf p:isSpouseOf ;
+              rdfs:domain :HumanNonhumanBeing ;
+              rdfs:range :HumanNonhumanBeing ;
+              skos:prefLabel "is Husband of"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#isKingOf
+p:isKingOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :Mortals .
+
+
+###  http://www.semanticweb.org/mythologies/property#isLocatedIn
+p:isLocatedIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :Temple ;
+              rdfs:range :Geography ;
+              rdfs:label "is located in" .
+
+
+###  http://www.semanticweb.org/mythologies/property#isLoverOf
+p:isLoverOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isPartnerOf ;
+            rdf:type owl:SymmetricProperty ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range :HumanNonhumanBeing ;
+            skos:prefLabel "est l'amant de"@fr ,
+                           "is lover of"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#isMotherOf
+p:isMotherOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:hasChild .
+
+
+###  http://www.semanticweb.org/mythologies/property#isPartnerOf
+p:isPartnerOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf p:isRelatedTo ;
+              rdfs:domain :HumanNonhumanBeing ;
+              rdfs:range :HumanNonhumanBeing ;
+              skos:prefLabel "is Partner of"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#isRelatedTo
+p:isRelatedTo rdf:type owl:ObjectProperty ;
+              rdfs:domain :HumanNonhumanBeing ;
+              rdfs:range :HumanNonhumanBeing ;
+              rdfs:label "is related to" .
+
+
+###  http://www.semanticweb.org/mythologies/property#isSibling
+p:isSibling rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf p:isRelatedTo .
+
+
+###  http://www.semanticweb.org/mythologies/property#isSisterOf
+p:isSisterOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:isSibling .
+
+
+###  http://www.semanticweb.org/mythologies/property#isSonOf
+p:isSonOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf p:isChildOf .
+
+
+###  http://www.semanticweb.org/mythologies/property#isSpouseOf
+p:isSpouseOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:isPartnerOf ;
+             rdfs:domain :HumanNonhumanBeing ;
+             rdfs:range :HumanNonhumanBeing ;
+             skos:prefLabel "is Spouse of"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#isTempleOf
+p:isTempleOf rdf:type owl:ObjectProperty ;
+             rdfs:domain :Temple ;
+             rdfs:range :HumanNonhumanBeing .
+
+
+###  http://www.semanticweb.org/mythologies/property#isTwinBrotherOf
+p:isTwinBrotherOf rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf p:isBrotherOf .
+
+
+###  http://www.semanticweb.org/mythologies/property#isTwinSisterOf
+p:isTwinSisterOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf p:isSisterOf .
+
+
+###  http://www.semanticweb.org/mythologies/property#killedBy
+p:killedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :HumanNonhumanBeing ;
+           rdfs:range :HumanNonhumanBeing ;
+           rdfs:label "Killed by" .
+
+
+###  http://www.semanticweb.org/mythologies/property#livesIn
+p:livesIn rdf:type owl:ObjectProperty ;
+          rdfs:domain :HumanNonhumanBeing ;
+          rdfs:range :Geography ;
+          skos:prefLabel "Lives in"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#mentionedIn
+p:mentionedIn rdf:type owl:ObjectProperty ;
+              rdfs:label "mentioned in" .
+
+
+###  http://www.semanticweb.org/mythologies/property#sacredAnimal
+p:sacredAnimal rdf:type owl:ObjectProperty ;
+               rdfs:domain :Immortel ;
+               rdfs:range :MythicAnimals .
+
+
+###  http://www.semanticweb.org/mythologies/property#sacredPlant
+p:sacredPlant rdf:type owl:ObjectProperty ;
+              rdfs:domain :Immortel ;
+              rdfs:range :Plant .
+
+
+###  http://www.semanticweb.org/mythologies/property#transformedInto
+p:transformedInto rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf p:event .
+
+
+###  http://www.semanticweb.org/mythologies/property#unmarriedPartner
+p:unmarriedPartner rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf p:isPartnerOf ;
+                   rdfs:domain :HumanNonhumanBeing ;
+                   rdfs:range :HumanNonhumanBeing ;
+                   skos:prefLabel "unmarried partner"@en .
+
+
+###  http://www.semanticweb.org/mythologies/property#writtenBy
+p:writtenBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :books ;
+            rdfs:range :Author .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#hasAncestor
+:hasAncestor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf p:isRelatedTo ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain :HumanNonhumanBeing ;
+             rdfs:range :HumanNonhumanBeing .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/mythologies/property#godOf
+p:godOf rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/mythologies/property#greekName
+p:greekName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasDBPediaSource
+p:hasDBPediaSource rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasOtherSource
+p:hasOtherSource rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasSource
+p:hasSource rdf:type owl:DatatypeProperty ;
+            rdfs:domain skos:Concept ;
+            rdfs:range xsd:anyURI .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasTheoiSource
+p:hasTheoiSource rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.semanticweb.org/mythologies/property#hasWikidataSource
+p:hasWikidataSource rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf p:hasSource .
+
+
+###  http://www.semanticweb.org/mythologies/property#image
+p:image rdf:type owl:DatatypeProperty ;
+        rdfs:comment "image" .
+
+
+###  http://www.semanticweb.org/mythologies/property#nativeTerm
+p:nativeTerm rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:range xsd:string ;
+             rdfs:comment "name in greek or Latin" .
+
+
+###  http://www.semanticweb.org/mythologies/property#regular
+p:regular rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf p:image ;
+          rdfs:domain :HumanNonhumanBeing ;
+          rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/mythologies/property#symbol
+p:symbol rdf:type owl:DatatypeProperty ;
+         rdfs:label "symbol" .
+
+
+###  http://www.semanticweb.org/mythologies/property#thumbnail
+p:thumbnail rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf p:image ;
+            rdfs:domain :HumanNonhumanBeing ;
+            rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/mythologies/scheme/AncienEgypt
+sch:AncienEgypt rdf:type owl:Class ;
+                rdfs:subClassOf sch:EgyptianWorld ;
+                skos:example "Thebes, Akhenaton" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Argonauts
+sch:Argonauts rdf:type owl:Class ;
+              rdfs:subClassOf sch:GreekMythology ;
+              rdfs:seeAlso <https://www.wikidata.org/wiki/Q165510> ;
+              skos:definition "hero group in Greek mythology; Quest for the Golden Fleece"@en ;
+              skos:prefLabel "Argonautes"@fr ,
+                             "Argonauts"@en .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Atreides
+sch:Atreides rdf:type owl:Class ;
+             rdfs:subClassOf sch:GreekMythology ;
+             rdfs:label "Atreides"@en ;
+             rdfs:seeAlso <https://www.wikidata.org/wiki/Q1932775> ;
+             skos:definition "Atrides"@fr ,
+                             "mythical descendants of Atreus" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/ChristianMythology
+sch:ChristianMythology rdf:type owl:Class ;
+                       rdfs:subClassOf sch:mythology .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/EgyptianMythCharacter
+sch:EgyptianMythCharacter rdf:type owl:Class ;
+                          rdfs:subClassOf sch:MythCharacter .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/EgyptianMythology
+sch:EgyptianMythology rdf:type owl:Class ;
+                      rdfs:subClassOf sch:mythology .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/EgyptianWorld
+sch:EgyptianWorld rdf:type owl:Class ;
+                  rdfs:subClassOf sch:GeographicWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/EtrusqueWorld
+sch:EtrusqueWorld rdf:type owl:Class ;
+                  rdfs:subClassOf sch:GeographicWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GeographicWorld
+sch:GeographicWorld rdf:type owl:Class ;
+                    rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Greece
+sch:Greece rdf:type owl:Class ;
+           rdfs:subClassOf sch:GreekWorld ;
+           skos:example "Athene, Sparte" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekAsia
+sch:GreekAsia rdf:type owl:Class ;
+              rdfs:subClassOf sch:GreekWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekItaly
+sch:GreekItaly rdf:type owl:Class ;
+               rdfs:subClassOf sch:GreekWorld ;
+               skos:example "Naple,Marseille, Nice" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekMythCharacter
+sch:GreekMythCharacter rdf:type owl:Class ;
+                       rdfs:subClassOf sch:MythCharacter ;
+                       rdfs:seeAlso <https://www.wikidata.org/wiki/Q22988604> ;
+                       skos:prefLabel "mythological Greek character"@en ,
+                                      "personnage de la mythologie grecque"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekMythology
+sch:GreekMythology rdf:type owl:Class ;
+                   rdfs:subClassOf sch:mythology ;
+                   rdfs:seeAlso <https://www.wikidata.org/wiki/Q34726> ;
+                   skos:prefLabel "Greek mythology"@en ,
+                                  "mythologie grecque"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekSicile
+sch:GreekSicile rdf:type owl:Class ;
+                rdfs:subClassOf sch:GreekWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/GreekWorld
+sch:GreekWorld rdf:type owl:Class ;
+               rdfs:subClassOf sch:GeographicWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Heracleidae
+sch:Heracleidae rdf:type owl:Class ;
+                rdfs:subClassOf sch:GreekMythology ;
+                rdfs:seeAlso <https://www.wikidata.org/wiki/Q828084> ;
+                skos:definition "mythical descendants of Heracles"@en ;
+                skos:prefLabel "Heracleidae"@en ,
+                               "Héraclides"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/IndianMythCharacter
+sch:IndianMythCharacter rdf:type owl:Class ;
+                        rdfs:subClassOf sch:MythCharacter .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/LegendOfTroy
+sch:LegendOfTroy rdf:type owl:Class ;
+                 rdfs:subClassOf sch:GreekMythology ;
+                 rdfs:seeAlso <https://www.wikidata.org/wiki/Q22647> ;
+                 skos:definition "stories and characters related to the city of Troy" ;
+                 skos:prefLabel "Legend of Troy"@en ,
+                                "Légende de Troie"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/LegendsOfHerakles
+sch:LegendsOfHerakles rdf:type owl:Class ;
+                      rdfs:subClassOf sch:GreekMythology ;
+                      skos:prefLabel "Legends of Herakles"@en ,
+                                     "légendes d'Hercule"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/MythCharacter
+sch:MythCharacter rdf:type owl:Class ;
+                  rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/NordicMythCharacter
+sch:NordicMythCharacter rdf:type owl:Class ;
+                        rdfs:subClassOf sch:MythCharacter .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Odyssey
+sch:Odyssey rdf:type owl:Class ;
+            rdfs:subClassOf sch:GreekMythology ;
+            rdfs:seeAlso <https://www.wikidata.org/wiki/Q35160> ;
+            skos:definition "stories and characters related to Homer's Odyssey" ;
+            skos:prefLabel "Odyssey"@en ,
+                           "Odyssée"@fr .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/Oracle
+sch:Oracle rdf:type owl:Class ;
+           rdfs:subClassOf sch:SacredPlace ;
+           skos:example "Delphes, Dodone" ;
+           skos:prefLabel "Oracle"@en .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/OttomanEmpire
+sch:OttomanEmpire rdf:type owl:Class ;
+                  rdfs:subClassOf sch:GeographicWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/PtolemianEgypt
+sch:PtolemianEgypt rdf:type owl:Class ;
+                   rdfs:subClassOf sch:EgyptianWorld ;
+                   skos:example "Alexandrie, Alexandre," .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/RomanEgypt
+sch:RomanEgypt rdf:type owl:Class ;
+               rdfs:subClassOf sch:EgyptianWorld ;
+               skos:example "Palmyre" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/RomanEmpire
+sch:RomanEmpire rdf:type owl:Class ;
+                rdfs:subClassOf sch:GeographicWorld .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/RomanItaly
+sch:RomanItaly rdf:type owl:Class ;
+               rdfs:subClassOf sch:RomanEmpire .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/RomanMythCharacter
+sch:RomanMythCharacter rdf:type owl:Class ;
+                       rdfs:subClassOf sch:MythCharacter ;
+                       rdfs:label "Roman Myth Character"@en .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/RomanMythology
+sch:RomanMythology rdf:type owl:Class ;
+                   rdfs:subClassOf sch:mythology ;
+                   rdfs:seeAlso <https://www.wikidata.org/wiki/Q122173> ;
+                   skos:definition "ensemble des légendes et des mythes de la Rome antique"@fr ,
+                                   "traditional stories pertaining to ancient Rome's legendary origins and religious system"@en ;
+                   skos:prefLabel "mythologie romaine"@fr ,
+                                  "Roman mythology" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/SacredPlace
+sch:SacredPlace rdf:type owl:Class ;
+                rdfs:subClassOf sch:SacredThing ;
+                skos:example "Délos, temple de Dodone (Le parthenon n'est pas un temple sacré)" .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/SacredThing
+sch:SacredThing rdf:type owl:Class ;
+                rdfs:subClassOf skos:ConceptScheme .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/mythology
+sch:mythology rdf:type owl:Class ;
+              rdfs:subClassOf skos:ConceptScheme ;
+              rdfs:seeAlso <https://www.wikidata.org/wiki/Q9134> ;
+              skos:definition "collection of sacred stories or a set of beliefs belonging to a specific religious or cultural tradition. It is a system of narratives that typically explain the origin of the world, natural phenomena, human customs"@en ,
+                              "ensemble de mythes liés à une civilisation, une religion ou un thème particulier"@fr ;
+              skos:prefLabel "mythologie"@fr ,
+                             "mythology"@en .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/mythologyOfCrete
+sch:mythologyOfCrete rdf:type owl:Class ;
+                     rdfs:subClassOf sch:GreekMythology ;
+                     skos:prefLabel "Mythologie de l'ile de Crete"@fr ,
+                                    "mythology of Crete"@en .
+
+
+###  http://www.semanticweb.org/mythologies/scheme/mythologyOfThebes
+sch:mythologyOfThebes rdf:type owl:Class ;
+                      rdfs:subClassOf sch:GreekMythology ;
+                      rdfs:seeAlso <https://www.wikidata.org/wiki/Q3974424> ;
+                      skos:prefLabel "Thebeïade"@fr ,
+                                     "mythology of Thebes"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#continent
+:continent rdf:type owl:Class ;
+           rdfs:subClassOf :Geography ;
+           skos:example "Asie, Europe,afrique" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#country
+:country rdf:type owl:Class ;
+         rdfs:subClassOf :Geography .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#philosophe
+:philosophe rdf:type owl:Class ;
+            rdfs:subClassOf :Author .
+
+
+###  http://www.semanticweb.org/ontologies/mythologie#sea
+:sea rdf:type owl:Class ;
+     rdfs:subClassOf :Geography ;
+     skos:example """mer medterranée
+Ocean atlantique
+Les Néreides vivent en méditerranée""" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#AgriculturalDeities
+:AgriculturalDeities rdf:type owl:Class ;
+                     rdfs:subClassOf :NatureDeities ;
+                     skos:example "Priapus" ;
+                     skos:prefLabel "Deité agricole"@fr ,
+                                    "Agricultural Deities" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Amazon
+:Amazon rdf:type owl:Class ;
+        rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Attribute
+:Attribute rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept ;
+           skos:example "love, wisdom,weaving,nature, etc ...." ;
+           skos:prefLabel "Attribute"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Author
+:Author rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:comment "Auteur : Ovide, sophocle, Nietszche" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Bird
+:Bird rdf:type owl:Class ;
+      rdfs:subClassOf :MythicAnimals ;
+      skos:example "Aigle, Rossignol" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Centaur
+:Centaur rdf:type owl:Class ;
+         rdfs:subClassOf :Quadriped ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q83203> ;
+         skos:definition "mythological creature of a combination of a man and a horse" ;
+         skos:example "Chiron" ;
+         skos:prefLabel "Centaur"@en ,
+                        "Centaure"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Charites
+:Charites rdf:type owl:Class ;
+          rdfs:subClassOf :OtherDeities ;
+          rdfs:seeAlso <https://www.theoi.com/Ouranios/Kharites.html> ;
+          skos:definition "THE KHARITES (Charites) or Graces, were three goddesses of grace, beauty, adornment, joy, mirth, festivity, dance and song."@en ;
+          skos:example "Aegle, Thalia, Euphrosyne" ;
+          skos:prefLabel "Charites"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#ChtonicDeity
+:ChtonicDeity rdf:type owl:Class ;
+              rdfs:subClassOf :Immortel ;
+              skos:definition "subterranean, underworld"@en ;
+              skos:example "Persephone, Hades"@en ;
+              skos:prefLabel "Chtonic Deity"@en ,
+                             "Déité chtonique"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :Geography ;
+      skos:example "Athene, Thebes" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Consul
+:Consul rdf:type owl:Class ;
+        rdfs:subClassOf :socialTitle ;
+        skos:example "Cicero" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Cyclops
+:Cyclops rdf:type owl:Class ;
+         rdfs:subClassOf :Giants ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q128430> ;
+         skos:definition "member of a primordial race of giants in Greek mythology" ;
+         skos:prefLabel "Cyclopes"@fr ,
+                        "Cyclops"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#DeifiedMortal
+:DeifiedMortal rdf:type owl:Class ;
+               rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Demon
+:Demon rdf:type owl:Class ;
+       rdfs:subClassOf :Immortel ;
+       skos:example "Greek Demon similar Lucifer" ;
+       skos:prefLabel "Demon"@en ,
+                      "Démon"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Dictateur
+:Dictateur rdf:type owl:Class ;
+           rdfs:subClassOf :socialTitle ;
+           skos:example "Pericles" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Dryads
+:Dryads rdf:type owl:Class ;
+        rdfs:subClassOf :Nymph ;
+        skos:definition "DRYADES (Dryads) and OREIADES (Oreads) were the nymphs of trees, groves, woodlands and mountain forests. They were the spirits of the oaks and pines, poplar and ash, apple and laurel." .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Emperor
+:Emperor rdf:type owl:Class ;
+         rdfs:subClassOf :socialTitle .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Epimelides
+:Epimelides rdf:type owl:Class ;
+            rdfs:subClassOf :Nymph ;
+            rdfs:seeAlso <https://www.wikidata.org/wiki/Q2006573> ,
+                         "Epimeliads"@en ,
+                         "Épimélides"@fr ;
+            skos:definition "THE EPIMELIDES were nymphs of meadows and pastures--protectors of sheep flocks and guardians of fruit-trees. The name Epimelides was derived from the Greek words epi- \"protector\" and mêlon \"sheep\" or \"apple-tree.\"" ;
+            skos:prefLabel "Epimelides"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Erinyes
+:Erinyes rdf:type owl:Class ;
+         rdfs:subClassOf :OtherDeities ;
+         rdfs:seeAlso <https://www.theoi.com/Khthonios/Erinyes.html> ;
+         skos:altLabel "Furies"@en ;
+         skos:definition "THE ERINYES (Furies) were three goddesses of vengeance and retribution who punished men for crimes against the natural order. They were particularly concerned with homicide, unfilial conduct, offenses against the gods, and perjury." ;
+         skos:example "Alecto, Megaera, Tisiphone" ;
+         skos:prefLabel "Erinyes"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Fauns
+:Fauns rdf:type owl:Class ;
+       rdfs:subClassOf :RusticDeities ;
+       rdfs:comment "Roman name for Satyrs" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#FertilityDeities
+:FertilityDeities rdf:type owl:Class ;
+                  rdfs:subClassOf :Immortel ;
+                  rdfs:seeAlso <https://commons.wikimedia.org/wiki/Category:Fertility_deities> ,
+                               <https://www.wikidata.org/wiki/Q1470705> ;
+                  skos:definition "Fertility Deities" ;
+                  skos:example "Priapus, Osiris, etc ..." ;
+                  skos:prefLabel "Fertility Deities"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Geography
+:Geography rdf:type owl:Class ;
+           rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Giants
+:Giants rdf:type owl:Class ;
+        rdfs:subClassOf :Immortel ;
+        rdfs:comment "créatures généralement anthropomorphes et de très grande taille"@fr ,
+                     "giant humanoid creature in mythology"@en ;
+        rdfs:seeAlso <https://www.theoi.com/greek-mythology/giants.html> ,
+                     <https://www.wikidata.org/wiki/Q3707571> ;
+        skos:altLabel "Gigantes"@en ;
+        skos:definition "The giants of Greek mythology or Gigantes (\"the earth-born\") as they are named in the Greek tongue were a class of oversized and ofttimes monstrous men closely related to the gods"@en ;
+        skos:prefLabel "Giants"@en ,
+                       "Géants"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Gorgons
+:Gorgons rdf:type owl:Class ;
+         rdfs:subClassOf :Monster ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q102059> ;
+         skos:definition "group of female creatures in Greek mythology" ;
+         skos:example "Medusa, Stheno, Euryale" ;
+         skos:prefLabel "Gorgones"@fr ,
+                        "Gorgons"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#GrandPretre
+:GrandPretre rdf:type owl:Class ;
+             rdfs:subClassOf :priest .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#HealthDeities
+:HealthDeities rdf:type owl:Class ;
+               rdfs:subClassOf :Immortel .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Heroe
+:Heroe rdf:type owl:Class ;
+       rdfs:subClassOf :Mortals ;
+       skos:prefLabel "Heroe"@en ,
+                      "Héros"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Hesperides
+:Hesperides rdf:type owl:Class ;
+            rdfs:subClassOf :Nymph ;
+            rdfs:seeAlso <https://www.wikidata.org/wiki/Q165938> ;
+            skos:definition "THE HESPERIDES were the goddess-nymphs of evening and the golden light of sunsets. They were the daughters of either Nyx (Night) or the heaven-bearing Titan Atlas. The Hesperides were entrusted with the care of the tree of the golden apples which was had been presented to the goddess Hera by Gaia (the Earth) on her wedding day." ;
+            skos:prefLabel "Hesperides"@en ,
+                           "Héspérides"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#History
+:History rdf:type owl:Class ;
+         rdfs:subClassOf :books .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#HumanNonhumanBeing
+:HumanNonhumanBeing rdf:type owl:Class ;
+                    rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Iapetionids
+:Iapetionids rdf:type owl:Class ;
+             rdfs:subClassOf :Titans .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Immortel
+:Immortel rdf:type owl:Class ;
+          rdfs:subClassOf :HumanNonhumanBeing ;
+          skos:prefLabel "Immortal"@en ,
+                         "Immortels"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#InmateOfTartares
+:InmateOfTartares rdf:type owl:Class ;
+                  rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Island
+:Island rdf:type owl:Class ;
+        rdfs:subClassOf :Geography ;
+        skos:example "Naxos, Delos" ;
+        skos:prefLabel "Iles"@fr ,
+                       "Island"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Khan
+:Khan rdf:type owl:Class ;
+      rdfs:subClassOf :socialTitle .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#King
+:King rdf:type owl:Class ;
+      rdfs:subClassOf :socialTitle ;
+      skos:example "Romulus, Nestor, Cresus" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#MinorFigure
+:MinorFigure rdf:type owl:Class ;
+             rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Monster
+:Monster rdf:type owl:Class ;
+         rdfs:subClassOf :MythicAnimals ;
+         skos:example "Gorgone, Meduse, Hydre de Lerne, Chevaux d'Augias, Nessus, Cerbère" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Mortals
+:Mortals rdf:type owl:Class ;
+         rdfs:subClassOf :HumanNonhumanBeing .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Moutain
+:Moutain rdf:type owl:Class ;
+         rdfs:subClassOf :Geography ;
+         skos:example "Olympe, Parnasse" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#MythicAnimals
+:MythicAnimals rdf:type owl:Class ;
+               rdfs:subClassOf :HumanNonhumanBeing ;
+               rdfs:comment "Pegase Thésée Minautore Centaure Cignes Cheval Taxonomie, toison d'or,dragon,charabde Scylla" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#MythologicalPlace
+:MythologicalPlace rdf:type owl:Class ;
+                   rdfs:subClassOf :Geography ;
+                   skos:example "Hadès, Olympe" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Naiades
+:Naiades rdf:type owl:Class ;
+         rdfs:subClassOf :Nymph ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q182037> ;
+         skos:definition "NAIADES (Naiads) were the nymphs of rivers, streams, lakes, marshes, fountains and springs. They were minor goddesses who attended the assemblies of the gods on Mount Olympos."@en ;
+         skos:prefLabel "Naiades"@en ,
+                        "Naiades"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#NatureDeities
+:NatureDeities rdf:type owl:Class ;
+               rdfs:subClassOf :Immortel ;
+               rdfs:seeAlso <https://www.wikidata.org/wiki/Q13405593> ;
+               skos:prefLabel "Nature Deities"@en ,
+                              "Divinitésde la nature" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Nereids
+:Nereids rdf:type owl:Class ;
+         rdfs:subClassOf :SeaDeities ;
+         rdfs:seeAlso <https://www.wikidata.org/wiki/Q54230> ;
+         skos:definition "THE NEREIDES (Nereids) were fifty sea-nymphe daughters of Nereus the old man of the sea. They were goddesses of the sea's rich bounty and protectors of sailors and fishermen, coming to the aid of those in distress" ;
+         skos:prefLabel "Nereids"@en ,
+                        "Néréides"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#NotableWoman
+:NotableWoman rdf:type owl:Class ;
+              rdfs:subClassOf :mythologicalGreekCharacter ;
+              skos:example "reine de Palmyre, Iphigenie,Semele" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Nymph
+:Nymph rdf:type owl:Class ;
+       rdfs:subClassOf :OtherDeities ;
+       skos:definition "NYMPHAI (Nymphs) were female spirits of the natural world-minor goddesses of the forests, rivers, springs, meadows, mountains and seas."@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Oceanid
+:Oceanid rdf:type owl:Class ;
+         rdfs:subClassOf :SeaDeities .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Olympian
+:Olympian rdf:type owl:Class ;
+          rdfs:subClassOf :Immortel ;
+          rdfs:seeAlso <https://www.wikidata.org/wiki/Q101609> ;
+          skos:definition "ensemble de 12 divinités majeures du panthéon grec. Voir 13 si l'on rajoute Dionysos."@fr ,
+                          "major deities of the Greek pantheon"@en ;
+          skos:prefLabel "Dieux de l'Olympe"@fr ,
+                         "Olympian"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#OlympianGod
+:OlympianGod rdf:type owl:Class ;
+             rdfs:subClassOf :Olympian ;
+             rdfs:seeAlso <https://www.wikidata.org/wiki/Q113103481> ;
+             skos:prefLabel "Olympian god"@en ,
+                            "divinité olympienne"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#OlympianGoddess
+:OlympianGoddess rdf:type owl:Class ;
+                 rdfs:subClassOf :Olympian ;
+                 skos:prefLabel "Olympian goddess"@en ,
+                                "les 6 déesses de l'Olympe" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Oreads
+:Oreads rdf:type owl:Class ;
+        rdfs:subClassOf :Nymph ;
+        skos:definition "DRYADES (Dryads) and OREIADES (Oreads) were the nymphs of trees, groves, woodlands and mountain forests. They were the spirits of the oaks and pines, poplar and ash, apple and laurel." .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#OtherDeities
+:OtherDeities rdf:type owl:Class ;
+              rdfs:subClassOf :Immortel ;
+              skos:prefLabel "Other Deities" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#OtherTitans
+:OtherTitans rdf:type owl:Class ;
+             rdfs:subClassOf :Titans .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#PersonifiedConcepts
+:PersonifiedConcepts rdf:type owl:Class ;
+                     rdfs:subClassOf :Immortel ;
+                     skos:example "Chronos : time" ;
+                     skos:prefLabel "Concept personifié"@fr ,
+                                    "Personified Concept"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Pharaon
+:Pharaon rdf:type owl:Class ;
+         rdfs:subClassOf :socialTitle .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Plant
+:Plant rdf:type owl:Class ;
+       rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Pleiad
+:Pleiad rdf:type owl:Class ;
+        rdfs:subClassOf :SkyDeities ;
+        skos:prefLabel "Pleiad"@en ,
+                       "Pléiades"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#PrimordialDeities
+:PrimordialDeities rdf:type owl:Class ;
+                   rdfs:subClassOf :Immortel ;
+                   rdfs:seeAlso <https://www.wikidata.org/wiki/Q878099> ;
+                   skos:definition "first generation of deities in Greek mythology"@en ,
+                                   "première génération d'entités dans la mythologie grecque"@fr ;
+                   skos:prefLabel "Greek primordial deity"@en ,
+                                  "divinité grecque primordiale"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Quadriped
+:Quadriped rdf:type owl:Class ;
+           rdfs:subClassOf :MythicAnimals ;
+           skos:example "Horse, Centaure, Cow, Bull, Minautore" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Geography ;
+        skos:example "cappadoce, Bythinie, Grande Grèce" ;
+        skos:prefLabel "Region"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Reptil
+:Reptil rdf:type owl:Class ;
+        rdfs:subClassOf :MythicAnimals ;
+        skos:example "serpent, dragon," .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#River
+:River rdf:type owl:Class ;
+       rdfs:subClassOf :Geography ;
+       skos:example "Styx, one of the rivers of the underworld, Pactole, fleuve Troie?," ;
+       skos:prefLabel "River"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#RomanGod
+:RomanGod rdf:type owl:Class ;
+          rdfs:subClassOf :Immortel ;
+          rdfs:seeAlso <https://www.wikidata.org/wiki/Q11688446> ;
+          skos:definition "ensemble de divinités majeures du panthéon romain"@fr ,
+                          "gods and goddesses of ancient Roman religion"@en ;
+          skos:prefLabel "Dieux romains"@fr ,
+                         "Roman gods"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#RusticDeities
+:RusticDeities rdf:type owl:Class ;
+               rdfs:subClassOf :NatureDeities .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Satrape
+:Satrape rdf:type owl:Class ;
+         rdfs:subClassOf :socialTitle .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Satyrs
+:Satyrs rdf:type owl:Class ;
+        rdfs:subClassOf :RusticDeities ;
+        rdfs:comment "Roman name : Fauns" ;
+        rdfs:seeAlso <https://www.theoi.com/Georgikos/Satyroi.html> ,
+                     <https://www.wikidata.org/wiki/Q163709> ;
+        skos:altLabel "Satyroi"@en ;
+        skos:definition "THE SATYROI (Satyrs) were rustic fertility spirits of the countryside and wilds. They consorted with the Nymphai (Nymphs) and were companions of the gods Dionysos, Hermes, Hephaistos, Pan, Rhea-Kybele and Gaia." ;
+        skos:example "SEILENOS (Silenus), PAN (not immortal ...)" ;
+        skos:prefLabel "Satyres"@fr ,
+                       "Satyrs"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#SeaDeities
+:SeaDeities rdf:type owl:Class ;
+            rdfs:subClassOf :Immortel .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Seer
+:Seer rdf:type owl:Class ;
+      rdfs:subClassOf :Mortals ;
+      skos:example "Pythie, Tiresisas," ;
+      skos:prefLabel "Seer"@en ,
+                     "Voyant, voyante"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#SkyDeities
+:SkyDeities rdf:type owl:Class ;
+            rdfs:subClassOf :Immortel ;
+            rdfs:seeAlso <https://www.wikidata.org/wiki/Q6639573> ;
+            skos:prefLabel "Sky Deities"@en ,
+                           "déité céleste"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Symbol
+:Symbol rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        skos:example "Lyre, Bow for Apollo" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Temple
+:Temple rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        rdfs:comment "temples : Artemis a Ephese, Dodone, capitole, Parthenon"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Titanides
+:Titanides rdf:type owl:Class ;
+           rdfs:subClassOf :Titans ;
+           skos:definition "female Titans" ;
+           skos:prefLabel "Titanides"@en ,
+                          "Titanides"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Titans
+:Titans rdf:type owl:Class ;
+        rdfs:subClassOf :Immortel ;
+        rdfs:seeAlso <https://www.wikidata.org/wiki/Q45713> ;
+        skos:definition "divinités primordiales géantes, enfants d'Ouranos et de Gaïa, ayant précédé les Cronides et les dieux de l'Olympe"@fr ,
+                        "members of the second order of divine beings in Greek mythology"@en ;
+        skos:prefLabel "Titan"@en ,
+                       "Titan"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Tyran
+:Tyran rdf:type owl:Class ;
+       rdfs:subClassOf :socialTitle ;
+       skos:example "Sicile ..?" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Uranids
+:Uranids rdf:type owl:Class ;
+         rdfs:subClassOf :Titans ;
+         skos:definition "The 6 children of Uranus and Gaia. Also called Titanes" ;
+         skos:example "Cronus, Coeus, Crius, Hyperion, Iapetus, Oceanus" ;
+         skos:prefLabel "Uranides"@fr ,
+                        "Uranids"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#Warrior
+:Warrior rdf:type owl:Class ;
+         rdfs:subClassOf :socialTitle ;
+         skos:example "Vercingetorix,Alexandre" ;
+         skos:prefLabel "Chef de guerre"@fr ,
+                        "Warrior"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#books
+:books rdf:type owl:Class ;
+       rdfs:subClassOf skos:Concept .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#comedie
+:comedie rdf:type owl:Class ;
+         rdfs:subClassOf :books .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#comique
+:comique rdf:type owl:Class ;
+         rdfs:subClassOf :Author .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#gender
+:gender rdf:type owl:Class ;
+        rdfs:subClassOf skos:OrderedCollection .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#historien
+:historien rdf:type owl:Class ;
+           rdfs:subClassOf :Author .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#medicinalPlant
+:medicinalPlant rdf:type owl:Class ;
+                rdfs:subClassOf :Plant .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#mythologicalGreekCharacter
+:mythologicalGreekCharacter rdf:type owl:Class ;
+                            rdfs:subClassOf :Mortals ;
+                            rdfs:seeAlso <https://www.wikidata.org/wiki/Q22988604> ;
+                            skos:prefLabel "mythological Greek character"@en ,
+                                           "personnage de la mythologie grecque"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#philosophy
+:philosophy rdf:type owl:Class ;
+            rdfs:subClassOf :books .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#priest
+:priest rdf:type owl:Class ;
+        rdfs:subClassOf :socialTitle ;
+        skos:example "Plutarque" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#protogenos
+:protogenos rdf:type owl:Class ;
+            rdfs:subClassOf :Immortel ;
+            skos:definition "primoridal elemental deities (protogenos) born at the dawn of creation."@en ;
+            skos:example "Gaiea, Ouranos"@en ;
+            skos:prefLabel "protogenos"@en .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#roman
+:roman rdf:type owl:Class ;
+       rdfs:subClassOf :books .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#sacredPlant
+:sacredPlant rdf:type owl:Class ;
+             rdfs:subClassOf :Plant ;
+             skos:example "Gui (druides)" .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#sacredPrecinct
+:sacredPrecinct rdf:type owl:Class ;
+                rdfs:subClassOf :Geography ;
+                skos:example "Delphi" ;
+                skos:prefLabel "sacred precinct"@en ,
+                               "site sacré"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#sacredTree
+:sacredTree rdf:type owl:Class ;
+            rdfs:subClassOf :Plant ;
+            skos:example "Olivier, Laurier"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#semiGod
+:semiGod rdf:type owl:Class ;
+         rdfs:subClassOf :Heroe ;
+         skos:altLabel "demigod"@en ;
+         skos:example "Achille, Hercule, Orpheus"@fr ;
+         skos:prefLabel "Demi-Dieux"@fr ,
+                        "Semi God"@en ;
+         skos:scopeNote "https://en.wikipedia.org/wiki/List_of_demigods"@fr .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#socialTitle
+:socialTitle rdf:type owl:Class ;
+             rdfs:subClassOf :Mortals .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#tragedian
+:tragedian rdf:type owl:Class ;
+           rdfs:subClassOf :Author .
+
+
+###  http://www.semanticweb.org/ontologies/mythologies#tragedy
+:tragedy rdf:type owl:Class ;
+         rdfs:subClassOf :Author ,
+                         :books ;
+         skos:prefLabel "Tragedy"@en ,
+                        "Tragédien"@fr .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
